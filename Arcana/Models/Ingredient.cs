@@ -6,7 +6,7 @@
         public string Name { get; set; } = string.Empty;
         public int Stock { get; set; }
         public string Unit { get; set; } = "units";
-        public string Rarity { get; set; } = "Common";
+        public IngredientRarity Rarity { get; set; } = IngredientRarity.Common;
         public bool IsActive { get; set; } = true;
 
         public ICollection<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient>();
