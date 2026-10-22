@@ -1,3 +1,6 @@
+using Arcana.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Arcana
 {
     internal static class Program
@@ -11,6 +14,11 @@ namespace Arcana
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            // Applys pending migrations when the program starts
+            using (var db = new AlchemyContext())
+            {
+                db.Database.Migrate();
+            }
             Application.Run(new MainForm());
         }
     }
