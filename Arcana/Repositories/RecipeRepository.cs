@@ -52,8 +52,10 @@ namespace Arcana.Repositories
             // Update a recipe
             else
             {
-
+                UpdateRecipee(db, recipe, ingredients);
             }
+
+            db.SaveChanges();
         }
 
         public void CreateRecipe(AlchemyContext db, Recipe recipe, List<RecipeIngredientEntry> ingredients)
