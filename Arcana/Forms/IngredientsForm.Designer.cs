@@ -363,6 +363,7 @@
             Name = "IngredientsForm";
             Text = "Ingredient Inventory";
             Load += IngredientsForm_Load;
+            Shown += IngredientsForm_Shown;
             ((System.ComponentModel.ISupportInitialize)dgvIngredients).EndInit();
             pnlIngredientEditor.ResumeLayout(false);
             pnlIngredientEditor.PerformLayout();

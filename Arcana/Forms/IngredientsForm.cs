@@ -8,6 +8,7 @@ namespace Arcana.Forms
     {
         private readonly IngredientRepository _repository = new();
         private int? _selectedIngredientId;
+        private bool _isLoadingIngredients;
 
         public IngredientsForm()
         {
@@ -25,13 +26,22 @@ namespace Arcana.Forms
 
         private void LoadIngredients()
         {
-            dgvIngredients.DataSource = null;
-            dgvIngredients.DataSource = _repository.GetAll(txtSearch.Text.Trim());
+            _isLoadingIngredients = true;
 
-            dgvIngredients.ClearSelection();
-            dgvIngredients.CurrentCell = null;
+            try
+            {
+                dgvIngredients.DataSource = null;
+                dgvIngredients.DataSource = _repository.GetAll(txtSearch.Text.Trim());
 
-            ClearEditor();
+                dgvIngredients.ClearSelection();
+                dgvIngredients.CurrentCell = null;
+
+                ClearEditor();
+            }
+            finally
+            {
+                _isLoadingIngredients = false;
+            }
         }
 
         // Clear the form, unselect cells from the table and disable the retire and clear button
@@ -54,10 +64,9 @@ namespace Arcana.Forms
 
         private void dgvIngredients_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvIngredients.CurrentRow?.DataBoundItem is not Ingredient ingredient)
-            {
-                return;
-            }
+            if (_isLoadingIngredients || dgvIngredients.SelectedRows.Count == 0) return;
+
+            if (dgvIngredients.CurrentRow?.DataBoundItem is not Ingredient ingredient) return;
 
             _selectedIngredientId = ingredient.Id;
 
@@ -195,6 +204,17 @@ namespace Arcana.Forms
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadIngredients();
+        }
+
+        // First time form is shown, clear any selection
+        private void IngredientsForm_Shown(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() =>
+            {
+                dgvIngredients.CurrentCell = null;
+                dgvIngredients.ClearSelection();
+                ClearEditor();
+            }));
         }
     }
 }
