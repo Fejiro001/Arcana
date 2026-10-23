@@ -145,6 +145,7 @@
             btnBrewing.Text = "Brewing Station";
             btnBrewing.TextAlign = ContentAlignment.MiddleLeft;
             btnBrewing.UseVisualStyleBackColor = false;
+            btnBrewing.Click += btnBrewing_Click;
             // 
             // btnRecipes
             // 
@@ -288,6 +289,7 @@
             btnStartBrewing.TabIndex = 2;
             btnStartBrewing.Text = "Brew a Potion";
             btnStartBrewing.UseVisualStyleBackColor = false;
+            btnStartBrewing.Click += btnStartBrewing_Click;
             // 
             // lblBrewingDescription
             // 
@@ -436,6 +438,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Arcana - The Alchemist's Workshop";
+            FormClosing += MainForm_FormClosing;
             Load += MainForm_Load;
             tblMainLayout.ResumeLayout(false);
             pnlSidebar.ResumeLayout(false);

@@ -1,5 +1,6 @@
 using Arcana.Data;
 using Arcana.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Arcana
 {
@@ -36,6 +37,15 @@ namespace Arcana
 
         private void OpenPage(Form page)
         {
+            // Prevent users from accidentally closing BrewingFoorm while brewing
+            if (_activePage is BrewingForm brewing && brewing.IsBrewing)
+            {
+                MessageBox.Show("Please finish brewing before switching pages.");
+
+                page.Dispose();
+                return;
+            }
+
             _activePage?.Close();
 
             _activePage = page;
@@ -60,6 +70,12 @@ namespace Arcana
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            if (_activePage is BrewingForm brewing && brewing.IsBrewing)
+            {
+                MessageBox.Show("Please finish brewing.");
+                return;
+            }
+
             _activePage?.Close();
             _activePage = null;
 
@@ -71,6 +87,27 @@ namespace Arcana
         private void btnRecipes_Click(object sender, EventArgs e)
         {
             OpenPage(new RecipesForm());
+        }
+
+        private void btnStartBrewing_Click(object sender, EventArgs e)
+        {
+            OpenPage(new BrewingForm());
+        }
+
+        private void btnBrewing_Click(object sender, EventArgs e)
+        {
+            OpenPage(new BrewingForm());
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_activePage is BrewingForm brewing && brewing.IsBrewing)
+            {
+                e.Cancel = true;
+
+                MessageBox.Show(
+                    "Please finish brewing before closing Arcana.");
+            }
         }
     }
 }
