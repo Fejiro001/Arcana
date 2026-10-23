@@ -216,5 +216,19 @@ namespace Arcana.Forms
                 ClearEditor();
             }));
         }
+
+        // Displays Active in green and Retired in muted red
+        private void dgvIngredients_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvIngredients.Columns[e.ColumnIndex].Name == "colStatus" && e.Value is bool isActive)
+            {
+                e.Value = isActive ? "Active" : "Retired";
+                e.CellStyle.ForeColor = isActive
+                    ? Color.FromArgb(145, 199, 166)
+                    : Color.FromArgb(219, 154, 154);
+
+                e.FormattingApplied = true;
+            }
+        }
     }
 }
