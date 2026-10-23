@@ -67,5 +67,10 @@ namespace Arcana
 
             LoadDashboard();
         }
+
+        private void btnRecipes_Click(object sender, EventArgs e)
+        {
+            OpenPage(new RecipesForm());
+        }
     }
 }

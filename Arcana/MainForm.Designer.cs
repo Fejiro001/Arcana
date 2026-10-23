@@ -160,6 +160,7 @@
             btnRecipes.Text = "Recipes";
             btnRecipes.TextAlign = ContentAlignment.MiddleLeft;
             btnRecipes.UseVisualStyleBackColor = false;
+            btnRecipes.Click += btnRecipes_Click;
             // 
             // btnIngredients
             // 
