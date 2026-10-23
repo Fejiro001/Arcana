@@ -102,6 +102,7 @@
             dgvRecipes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRecipes.Size = new Size(816, 225);
             dgvRecipes.TabIndex = 3;
+            dgvRecipes.CellFormatting += dgvRecipes_CellFormatting;
             dgvRecipes.SelectionChanged += dgvRecipes_SelectionChanged;
             // 
             // ID

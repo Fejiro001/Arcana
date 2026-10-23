@@ -231,5 +231,18 @@ namespace Arcana.Forms
         {
             BeginInvoke(new Action(ClearEditor));
         }
+
+        private void dgvRecipes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvRecipes.Columns[e.ColumnIndex].Name == "colRecipeStatus" && e.Value is bool isActive)
+            {
+                e.Value = isActive ? "Active" : "Retired";
+                e.CellStyle.ForeColor = isActive
+                    ? Color.FromArgb(145, 199, 166)
+                    : Color.FromArgb(219, 154, 154);
+
+                e.FormattingApplied = true;
+            }
+        }
     }
 }
