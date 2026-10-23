@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblTitle = new Label();
             lblSubtitle = new Label();
             txtSearch = new TextBox();
             dgvIngredients = new DataGridView();
-            pnlIngredientEditor = new Panel();
-            label1 = new Label();
-            txtIngredientName = new TextBox();
-            txtUnit = new TextBox();
-            nudStock = new NumericUpDown();
-            cmbRarity = new ComboBox();
-            btnAdd = new Button();
-            btnUpdate = new Button();
-            btnRetire = new Button();
-            btnClear = new Button();
             colId = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             colStock = new DataGridViewTextBoxColumn();
             colUnit = new DataGridViewTextBoxColumn();
             colRarity = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
-            lblIngredientName = new Label();
-            lblUnit = new Label();
-            lblStock = new Label();
+            pnlIngredientEditor = new Panel();
             lblRarity = new Label();
+            lblStock = new Label();
+            lblUnit = new Label();
+            lblIngredientName = new Label();
+            btnClear = new Button();
+            btnRetire = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
+            cmbRarity = new ComboBox();
+            nudStock = new NumericUpDown();
+            txtUnit = new TextBox();
+            txtIngredientName = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvIngredients).BeginInit();
             pnlIngredientEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudStock).BeginInit();
@@ -87,6 +87,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(350, 34);
             txtSearch.TabIndex = 2;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // dgvIngredients
             // 
@@ -96,24 +97,24 @@
             dgvIngredients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvIngredients.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvIngredients.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(55, 50, 72);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(167, 139, 250);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(55, 50, 72);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(167, 139, 250);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvIngredients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvIngredients.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colStock, colUnit, colRarity, colStatus });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(41, 38, 60);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(185, 179, 206);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvIngredients.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(41, 38, 60);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(185, 179, 206);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvIngredients.DefaultCellStyle = dataGridViewCellStyle2;
             dgvIngredients.EnableHeadersVisualStyles = false;
             dgvIngredients.Location = new Point(30, 155);
             dgvIngredients.MultiSelect = false;
@@ -123,133 +124,7 @@
             dgvIngredients.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvIngredients.Size = new Size(820, 255);
             dgvIngredients.TabIndex = 3;
-            // 
-            // pnlIngredientEditor
-            // 
-            pnlIngredientEditor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pnlIngredientEditor.BackColor = Color.FromArgb(41, 38, 60);
-            pnlIngredientEditor.Controls.Add(lblRarity);
-            pnlIngredientEditor.Controls.Add(lblStock);
-            pnlIngredientEditor.Controls.Add(lblUnit);
-            pnlIngredientEditor.Controls.Add(lblIngredientName);
-            pnlIngredientEditor.Controls.Add(btnClear);
-            pnlIngredientEditor.Controls.Add(btnRetire);
-            pnlIngredientEditor.Controls.Add(btnUpdate);
-            pnlIngredientEditor.Controls.Add(btnAdd);
-            pnlIngredientEditor.Controls.Add(cmbRarity);
-            pnlIngredientEditor.Controls.Add(nudStock);
-            pnlIngredientEditor.Controls.Add(txtUnit);
-            pnlIngredientEditor.Controls.Add(txtIngredientName);
-            pnlIngredientEditor.Controls.Add(label1);
-            pnlIngredientEditor.Location = new Point(30, 435);
-            pnlIngredientEditor.Name = "pnlIngredientEditor";
-            pnlIngredientEditor.Size = new Size(820, 225);
-            pnlIngredientEditor.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(246, 240, 255);
-            label1.Location = new Point(3, 7);
-            label1.Name = "label1";
-            label1.Size = new Size(219, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Ingredient Details";
-            // 
-            // txtIngredientName
-            // 
-            txtIngredientName.BackColor = Color.FromArgb(25, 24, 39);
-            txtIngredientName.BorderStyle = BorderStyle.FixedSingle;
-            txtIngredientName.ForeColor = Color.FromArgb(185, 179, 206);
-            txtIngredientName.Location = new Point(15, 80);
-            txtIngredientName.Name = "txtIngredientName";
-            txtIngredientName.Size = new Size(150, 34);
-            txtIngredientName.TabIndex = 1;
-            txtIngredientName.Text = "e.g. Fairy Dust";
-            // 
-            // txtUnit
-            // 
-            txtUnit.BackColor = Color.FromArgb(25, 24, 39);
-            txtUnit.ForeColor = Color.FromArgb(185, 179, 206);
-            txtUnit.Location = new Point(230, 80);
-            txtUnit.Name = "txtUnit";
-            txtUnit.Size = new Size(150, 34);
-            txtUnit.TabIndex = 2;
-            txtUnit.Text = "e.g. pinches";
-            // 
-            // nudStock
-            // 
-            nudStock.BackColor = Color.FromArgb(25, 24, 39);
-            nudStock.ForeColor = Color.FromArgb(185, 179, 206);
-            nudStock.Location = new Point(411, 81);
-            nudStock.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
-            nudStock.Name = "nudStock";
-            nudStock.Size = new Size(180, 34);
-            nudStock.TabIndex = 3;
-            // 
-            // cmbRarity
-            // 
-            cmbRarity.BackColor = Color.FromArgb(25, 24, 39);
-            cmbRarity.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRarity.ForeColor = Color.FromArgb(185, 179, 206);
-            cmbRarity.FormattingEnabled = true;
-            cmbRarity.Location = new Point(610, 81);
-            cmbRarity.Name = "cmbRarity";
-            cmbRarity.Size = new Size(182, 36);
-            cmbRarity.TabIndex = 4;
-            // 
-            // btnAdd
-            // 
-            btnAdd.AutoSize = true;
-            btnAdd.BackColor = Color.FromArgb(128, 90, 202);
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(15, 173);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(156, 40);
-            btnAdd.TabIndex = 5;
-            btnAdd.Text = "Add Ingredient";
-            btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.Enabled = false;
-            btnUpdate.FlatAppearance.BorderSize = 0;
-            btnUpdate.FlatStyle = FlatStyle.Flat;
-            btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(177, 176);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(112, 34);
-            btnUpdate.TabIndex = 6;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnRetire
-            // 
-            btnRetire.Enabled = false;
-            btnRetire.FlatAppearance.BorderSize = 0;
-            btnRetire.FlatStyle = FlatStyle.Flat;
-            btnRetire.ForeColor = Color.White;
-            btnRetire.Location = new Point(295, 173);
-            btnRetire.Name = "btnRetire";
-            btnRetire.Size = new Size(112, 34);
-            btnRetire.TabIndex = 7;
-            btnRetire.Text = "Retire";
-            btnRetire.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            btnClear.FlatAppearance.BorderSize = 0;
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(424, 173);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(112, 34);
-            btnClear.TabIndex = 8;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            dgvIngredients.SelectionChanged += dgvIngredients_SelectionChanged;
             // 
             // colId
             // 
@@ -300,25 +175,37 @@
             colStatus.Name = "colStatus";
             colStatus.ReadOnly = true;
             // 
-            // lblIngredientName
+            // pnlIngredientEditor
             // 
-            lblIngredientName.AutoSize = true;
-            lblIngredientName.ForeColor = Color.FromArgb(185, 179, 206);
-            lblIngredientName.Location = new Point(15, 50);
-            lblIngredientName.Name = "lblIngredientName";
-            lblIngredientName.Size = new Size(64, 28);
-            lblIngredientName.TabIndex = 9;
-            lblIngredientName.Text = "Name";
+            pnlIngredientEditor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlIngredientEditor.BackColor = Color.FromArgb(41, 38, 60);
+            pnlIngredientEditor.Controls.Add(lblRarity);
+            pnlIngredientEditor.Controls.Add(lblStock);
+            pnlIngredientEditor.Controls.Add(lblUnit);
+            pnlIngredientEditor.Controls.Add(lblIngredientName);
+            pnlIngredientEditor.Controls.Add(btnClear);
+            pnlIngredientEditor.Controls.Add(btnRetire);
+            pnlIngredientEditor.Controls.Add(btnUpdate);
+            pnlIngredientEditor.Controls.Add(btnAdd);
+            pnlIngredientEditor.Controls.Add(cmbRarity);
+            pnlIngredientEditor.Controls.Add(nudStock);
+            pnlIngredientEditor.Controls.Add(txtUnit);
+            pnlIngredientEditor.Controls.Add(txtIngredientName);
+            pnlIngredientEditor.Controls.Add(label1);
+            pnlIngredientEditor.Location = new Point(30, 435);
+            pnlIngredientEditor.Name = "pnlIngredientEditor";
+            pnlIngredientEditor.Size = new Size(820, 225);
+            pnlIngredientEditor.TabIndex = 4;
             // 
-            // lblUnit
+            // lblRarity
             // 
-            lblUnit.AutoSize = true;
-            lblUnit.ForeColor = Color.FromArgb(185, 179, 206);
-            lblUnit.Location = new Point(230, 49);
-            lblUnit.Name = "lblUnit";
-            lblUnit.Size = new Size(49, 28);
-            lblUnit.TabIndex = 10;
-            lblUnit.Text = "Unit";
+            lblRarity.AutoSize = true;
+            lblRarity.ForeColor = Color.FromArgb(185, 179, 206);
+            lblRarity.Location = new Point(610, 50);
+            lblRarity.Name = "lblRarity";
+            lblRarity.Size = new Size(63, 28);
+            lblRarity.TabIndex = 12;
+            lblRarity.Text = "Rarity";
             // 
             // lblStock
             // 
@@ -330,15 +217,134 @@
             lblStock.TabIndex = 11;
             lblStock.Text = "Stock";
             // 
-            // lblRarity
+            // lblUnit
             // 
-            lblRarity.AutoSize = true;
-            lblRarity.ForeColor = Color.FromArgb(185, 179, 206);
-            lblRarity.Location = new Point(610, 50);
-            lblRarity.Name = "lblRarity";
-            lblRarity.Size = new Size(63, 28);
-            lblRarity.TabIndex = 12;
-            lblRarity.Text = "Rarity";
+            lblUnit.AutoSize = true;
+            lblUnit.ForeColor = Color.FromArgb(185, 179, 206);
+            lblUnit.Location = new Point(230, 49);
+            lblUnit.Name = "lblUnit";
+            lblUnit.Size = new Size(49, 28);
+            lblUnit.TabIndex = 10;
+            lblUnit.Text = "Unit";
+            // 
+            // lblIngredientName
+            // 
+            lblIngredientName.AutoSize = true;
+            lblIngredientName.ForeColor = Color.FromArgb(185, 179, 206);
+            lblIngredientName.Location = new Point(15, 50);
+            lblIngredientName.Name = "lblIngredientName";
+            lblIngredientName.Size = new Size(64, 28);
+            lblIngredientName.TabIndex = 9;
+            lblIngredientName.Text = "Name";
+            // 
+            // btnClear
+            // 
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(424, 173);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(112, 34);
+            btnClear.TabIndex = 8;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnRetire
+            // 
+            btnRetire.Enabled = false;
+            btnRetire.FlatAppearance.BorderSize = 0;
+            btnRetire.FlatStyle = FlatStyle.Flat;
+            btnRetire.ForeColor = Color.White;
+            btnRetire.Location = new Point(295, 173);
+            btnRetire.Name = "btnRetire";
+            btnRetire.Size = new Size(112, 34);
+            btnRetire.TabIndex = 7;
+            btnRetire.Text = "Retire";
+            btnRetire.UseVisualStyleBackColor = true;
+            btnRetire.Click += btnRetire_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Enabled = false;
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(177, 176);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(112, 34);
+            btnUpdate.TabIndex = 6;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.AutoSize = true;
+            btnAdd.BackColor = Color.FromArgb(128, 90, 202);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(15, 173);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(156, 40);
+            btnAdd.TabIndex = 5;
+            btnAdd.Text = "Add Ingredient";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // cmbRarity
+            // 
+            cmbRarity.BackColor = Color.FromArgb(25, 24, 39);
+            cmbRarity.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRarity.ForeColor = Color.FromArgb(185, 179, 206);
+            cmbRarity.FormattingEnabled = true;
+            cmbRarity.Location = new Point(610, 81);
+            cmbRarity.Name = "cmbRarity";
+            cmbRarity.Size = new Size(182, 36);
+            cmbRarity.TabIndex = 4;
+            // 
+            // nudStock
+            // 
+            nudStock.BackColor = Color.FromArgb(25, 24, 39);
+            nudStock.ForeColor = Color.FromArgb(185, 179, 206);
+            nudStock.Location = new Point(411, 81);
+            nudStock.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            nudStock.Name = "nudStock";
+            nudStock.Size = new Size(180, 34);
+            nudStock.TabIndex = 3;
+            // 
+            // txtUnit
+            // 
+            txtUnit.BackColor = Color.FromArgb(25, 24, 39);
+            txtUnit.ForeColor = Color.FromArgb(185, 179, 206);
+            txtUnit.Location = new Point(230, 80);
+            txtUnit.Name = "txtUnit";
+            txtUnit.Size = new Size(150, 34);
+            txtUnit.TabIndex = 2;
+            txtUnit.Text = "e.g. pinches";
+            // 
+            // txtIngredientName
+            // 
+            txtIngredientName.BackColor = Color.FromArgb(25, 24, 39);
+            txtIngredientName.BorderStyle = BorderStyle.FixedSingle;
+            txtIngredientName.ForeColor = Color.FromArgb(185, 179, 206);
+            txtIngredientName.Location = new Point(15, 80);
+            txtIngredientName.Name = "txtIngredientName";
+            txtIngredientName.Size = new Size(150, 34);
+            txtIngredientName.TabIndex = 1;
+            txtIngredientName.Text = "e.g. Fairy Dust";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(246, 240, 255);
+            label1.Location = new Point(3, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(219, 32);
+            label1.TabIndex = 0;
+            label1.Text = "Ingredient Details";
             // 
             // IngredientsForm
             // 
@@ -356,6 +362,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "IngredientsForm";
             Text = "Ingredient Inventory";
+            Load += IngredientsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvIngredients).EndInit();
             pnlIngredientEditor.ResumeLayout(false);
             pnlIngredientEditor.PerformLayout();
