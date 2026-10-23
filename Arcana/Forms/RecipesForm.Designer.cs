@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblTitle = new Label();
             lblSubtitle = new Label();
             dgvRecipes = new DataGridView();
@@ -93,6 +94,14 @@
             // 
             dgvRecipes.AllowUserToAddRows = false;
             dgvRecipes.BackgroundColor = Color.FromArgb(41, 38, 60);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(196, 167, 255);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvRecipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvRecipes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRecipes.Columns.AddRange(new DataGridViewColumn[] { ID, colRecipeName, colEffect, colElement, colDuration, colRecipeStatus });
             dgvRecipes.Location = new Point(12, 159);
@@ -475,7 +484,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(961, 1200);
+            ClientSize = new Size(950, 1200);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(dgvRecipes);
