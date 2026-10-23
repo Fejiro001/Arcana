@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             lblTitle = new Label();
             lblSubtitle = new Label();
             txtSearch = new TextBox();
             dgvIngredients = new DataGridView();
+            colId = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colStock = new DataGridViewTextBoxColumn();
+            colUnit = new DataGridViewTextBoxColumn();
+            colRarity = new DataGridViewTextBoxColumn();
+            colStatus = new DataGridViewTextBoxColumn();
             pnlIngredientEditor = new Panel();
             lblRarity = new Label();
             lblStock = new Label();
@@ -49,12 +55,6 @@
             txtUnit = new TextBox();
             txtIngredientName = new TextBox();
             label1 = new Label();
-            colId = new DataGridViewTextBoxColumn();
-            colName = new DataGridViewTextBoxColumn();
-            colStock = new DataGridViewTextBoxColumn();
-            colUnit = new DataGridViewTextBoxColumn();
-            colRarity = new DataGridViewTextBoxColumn();
-            colStatus = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvIngredients).BeginInit();
             pnlIngredientEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudStock).BeginInit();
@@ -96,34 +96,34 @@
             // 
             dgvIngredients.AllowUserToAddRows = false;
             dgvIngredients.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(47, 43, 67);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 220, 245);
-            dgvIngredients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(47, 43, 67);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(230, 220, 245);
+            dgvIngredients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             dgvIngredients.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvIngredients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvIngredients.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvIngredients.BorderStyle = BorderStyle.None;
             dgvIngredients.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(55, 50, 72);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(196, 167, 255);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(55, 50, 72);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(55, 50, 72);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = Color.FromArgb(196, 167, 255);
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(55, 50, 72);
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dgvIngredients.ColumnHeadersHeight = 34;
             dgvIngredients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvIngredients.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colStock, colUnit, colRarity, colStatus });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(41, 38, 60);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(230, 220, 245);
-            dataGridViewCellStyle3.Padding = new Padding(4, 2, 4, 2);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(81, 65, 123);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvIngredients.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(41, 38, 60);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(230, 220, 245);
+            dataGridViewCellStyle12.Padding = new Padding(4, 2, 4, 2);
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(81, 65, 123);
+            dataGridViewCellStyle12.SelectionForeColor = Color.White;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dgvIngredients.DefaultCellStyle = dataGridViewCellStyle12;
             dgvIngredients.EnableHeadersVisualStyles = false;
             dgvIngredients.GridColor = Color.FromArgb(65, 58, 85);
             dgvIngredients.Location = new Point(30, 160);
@@ -139,6 +139,59 @@
             dgvIngredients.TabIndex = 3;
             dgvIngredients.CellFormatting += dgvIngredients_CellFormatting;
             dgvIngredients.SelectionChanged += dgvIngredients_SelectionChanged;
+            // 
+            // colId
+            // 
+            colId.DataPropertyName = "Id";
+            colId.HeaderText = "ID";
+            colId.MinimumWidth = 8;
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Visible = false;
+            // 
+            // colName
+            // 
+            colName.DataPropertyName = "Name";
+            colName.FillWeight = 150F;
+            colName.HeaderText = "Ingredient";
+            colName.MinimumWidth = 8;
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            colStock.DataPropertyName = "Stock";
+            colStock.FillWeight = 50F;
+            colStock.HeaderText = "Stock";
+            colStock.MinimumWidth = 8;
+            colStock.Name = "colStock";
+            colStock.ReadOnly = true;
+            // 
+            // colUnit
+            // 
+            colUnit.DataPropertyName = "Unit";
+            colUnit.FillWeight = 80F;
+            colUnit.HeaderText = "Unit";
+            colUnit.MinimumWidth = 8;
+            colUnit.Name = "colUnit";
+            colUnit.ReadOnly = true;
+            // 
+            // colRarity
+            // 
+            colRarity.DataPropertyName = "Rarity";
+            colRarity.HeaderText = "Rarity";
+            colRarity.MinimumWidth = 8;
+            colRarity.Name = "colRarity";
+            colRarity.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            colStatus.DataPropertyName = "IsActive";
+            colStatus.FillWeight = 60F;
+            colStatus.HeaderText = "Status";
+            colStatus.MinimumWidth = 8;
+            colStatus.Name = "colStatus";
+            colStatus.ReadOnly = true;
             // 
             // pnlIngredientEditor
             // 
@@ -290,9 +343,9 @@
             txtUnit.ForeColor = Color.FromArgb(246, 240, 255);
             txtUnit.Location = new Point(230, 85);
             txtUnit.Name = "txtUnit";
+            txtUnit.PlaceholderText = "e.g. pinches";
             txtUnit.Size = new Size(190, 34);
             txtUnit.TabIndex = 2;
-            txtUnit.Text = "e.g. pinches";
             // 
             // txtIngredientName
             // 
@@ -301,9 +354,9 @@
             txtIngredientName.ForeColor = Color.FromArgb(246, 240, 255);
             txtIngredientName.Location = new Point(20, 85);
             txtIngredientName.Name = "txtIngredientName";
+            txtIngredientName.PlaceholderText = "e.g. Fairy Dust";
             txtIngredientName.Size = new Size(190, 34);
             txtIngredientName.TabIndex = 1;
-            txtIngredientName.Text = "e.g. Fairy Dust";
             // 
             // label1
             // 
@@ -314,59 +367,6 @@
             label1.Size = new Size(350, 35);
             label1.TabIndex = 0;
             label1.Text = "Ingredient Details";
-            // 
-            // colId
-            // 
-            colId.DataPropertyName = "Id";
-            colId.HeaderText = "ID";
-            colId.MinimumWidth = 8;
-            colId.Name = "colId";
-            colId.ReadOnly = true;
-            colId.Visible = false;
-            // 
-            // colName
-            // 
-            colName.DataPropertyName = "Name";
-            colName.FillWeight = 150F;
-            colName.HeaderText = "Ingredient";
-            colName.MinimumWidth = 8;
-            colName.Name = "colName";
-            colName.ReadOnly = true;
-            // 
-            // colStock
-            // 
-            colStock.DataPropertyName = "Stock";
-            colStock.FillWeight = 50F;
-            colStock.HeaderText = "Stock";
-            colStock.MinimumWidth = 8;
-            colStock.Name = "colStock";
-            colStock.ReadOnly = true;
-            // 
-            // colUnit
-            // 
-            colUnit.DataPropertyName = "Unit";
-            colUnit.FillWeight = 80F;
-            colUnit.HeaderText = "Unit";
-            colUnit.MinimumWidth = 8;
-            colUnit.Name = "colUnit";
-            colUnit.ReadOnly = true;
-            // 
-            // colRarity
-            // 
-            colRarity.DataPropertyName = "Rarity";
-            colRarity.HeaderText = "Rarity";
-            colRarity.MinimumWidth = 8;
-            colRarity.Name = "colRarity";
-            colRarity.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            colStatus.DataPropertyName = "IsActive";
-            colStatus.FillWeight = 60F;
-            colStatus.HeaderText = "Status";
-            colStatus.MinimumWidth = 8;
-            colStatus.Name = "colStatus";
-            colStatus.ReadOnly = true;
             // 
             // IngredientsForm
             // 
