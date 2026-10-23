@@ -43,6 +43,7 @@
             lblRecentActivityEmpty = new Label();
             lblRecentActivityTitle = new Label();
             pnlBrewingStation = new Panel();
+            btnStartBrewing = new Button();
             lblBrewingDescription = new Label();
             lblBrewingTitle = new Label();
             pnlPotionCard = new Panel();
@@ -56,7 +57,6 @@
             lblIngredientCount = new Label();
             lblPageSubtitle = new Label();
             lblPageTitle = new Label();
-            btnStartBrewing = new Button();
             tblMainLayout.SuspendLayout();
             pnlSidebar.SuspendLayout();
             pnlContent.SuspendLayout();
@@ -175,6 +175,7 @@
             btnIngredients.Text = "Ingredients";
             btnIngredients.TextAlign = ContentAlignment.MiddleLeft;
             btnIngredients.UseVisualStyleBackColor = false;
+            btnIngredients.Click += btnIngredients_Click;
             // 
             // btnDashboard
             // 
@@ -190,6 +191,7 @@
             btnDashboard.Text = "Dashboard";
             btnDashboard.TextAlign = ContentAlignment.MiddleLeft;
             btnDashboard.UseVisualStyleBackColor = false;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // lblSubtitle
             // 
@@ -271,6 +273,20 @@
             pnlBrewingStation.Name = "pnlBrewingStation";
             pnlBrewingStation.Size = new Size(820, 180);
             pnlBrewingStation.TabIndex = 5;
+            // 
+            // btnStartBrewing
+            // 
+            btnStartBrewing.BackColor = Color.FromArgb(128, 90, 202);
+            btnStartBrewing.FlatAppearance.BorderSize = 0;
+            btnStartBrewing.FlatStyle = FlatStyle.Flat;
+            btnStartBrewing.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnStartBrewing.ForeColor = Color.White;
+            btnStartBrewing.Location = new Point(20, 120);
+            btnStartBrewing.Name = "btnStartBrewing";
+            btnStartBrewing.Size = new Size(160, 40);
+            btnStartBrewing.TabIndex = 2;
+            btnStartBrewing.Text = "Brew a Potion";
+            btnStartBrewing.UseVisualStyleBackColor = false;
             // 
             // lblBrewingDescription
             // 
@@ -406,20 +422,6 @@
             lblPageTitle.Size = new Size(446, 60);
             lblPageTitle.TabIndex = 0;
             lblPageTitle.Text = "Workshop Overview";
-            // 
-            // btnStartBrewing
-            // 
-            btnStartBrewing.BackColor = Color.FromArgb(128, 90, 202);
-            btnStartBrewing.FlatAppearance.BorderSize = 0;
-            btnStartBrewing.FlatStyle = FlatStyle.Flat;
-            btnStartBrewing.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnStartBrewing.ForeColor = Color.White;
-            btnStartBrewing.Location = new Point(20, 120);
-            btnStartBrewing.Name = "btnStartBrewing";
-            btnStartBrewing.Size = new Size(160, 40);
-            btnStartBrewing.TabIndex = 2;
-            btnStartBrewing.Text = "Brew a Potion";
-            btnStartBrewing.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
