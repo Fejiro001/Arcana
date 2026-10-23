@@ -209,12 +209,7 @@ namespace Arcana.Forms
         // First time form is shown, clear any selection
         private void IngredientsForm_Shown(object sender, EventArgs e)
         {
-            BeginInvoke(new Action(() =>
-            {
-                dgvIngredients.CurrentCell = null;
-                dgvIngredients.ClearSelection();
-                ClearEditor();
-            }));
+            BeginInvoke(new Action(ClearEditor));
         }
 
         // Displays Active in green and Retired in muted red
