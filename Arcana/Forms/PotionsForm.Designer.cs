@@ -36,14 +36,17 @@
             colEffect = new DataGridViewTextBoxColumn();
             colBrewedAt = new DataGridViewTextBoxColumn();
             colPotionStatus = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
+            pnlPotionDetails = new Panel();
             btnDelete = new Button();
             btnConsume = new Button();
             lblSelectedEffect = new Label();
             label3 = new Label();
             label4 = new Label();
+            pnlPotionLibrary = new Panel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvPotions).BeginInit();
-            panel1.SuspendLayout();
+            pnlPotionDetails.SuspendLayout();
+            pnlPotionLibrary.SuspendLayout();
             SuspendLayout();
             // 
             // lblSubtitle
@@ -74,14 +77,14 @@
             dgvPotions.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvPotions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPotions.Columns.AddRange(new DataGridViewColumn[] { colPotionName, colElement, colEffect, colBrewedAt, colPotionStatus });
-            dgvPotions.Location = new Point(31, 125);
+            dgvPotions.Location = new Point(20, 55);
             dgvPotions.MultiSelect = false;
             dgvPotions.Name = "dgvPotions";
             dgvPotions.ReadOnly = true;
             dgvPotions.RowHeadersVisible = false;
             dgvPotions.RowHeadersWidth = 62;
             dgvPotions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPotions.Size = new Size(982, 252);
+            dgvPotions.Size = new Size(830, 235);
             dgvPotions.TabIndex = 7;
             dgvPotions.SelectionChanged += dgvPotions_SelectionChanged;
             // 
@@ -125,32 +128,31 @@
             colPotionStatus.Name = "colPotionStatus";
             colPotionStatus.ReadOnly = true;
             // 
-            // panel1
+            // pnlPotionDetails
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(41, 38, 60);
-            panel1.Controls.Add(btnDelete);
-            panel1.Controls.Add(btnConsume);
-            panel1.Controls.Add(lblSelectedEffect);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label4);
-            panel1.Location = new Point(31, 407);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(982, 245);
-            panel1.TabIndex = 8;
+            pnlPotionDetails.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlPotionDetails.BackColor = Color.FromArgb(41, 38, 60);
+            pnlPotionDetails.Controls.Add(btnDelete);
+            pnlPotionDetails.Controls.Add(btnConsume);
+            pnlPotionDetails.Controls.Add(lblSelectedEffect);
+            pnlPotionDetails.Controls.Add(label3);
+            pnlPotionDetails.Controls.Add(label4);
+            pnlPotionDetails.Location = new Point(30, 445);
+            pnlPotionDetails.Name = "pnlPotionDetails";
+            pnlPotionDetails.Size = new Size(870, 190);
+            pnlPotionDetails.TabIndex = 8;
             // 
             // btnDelete
             // 
-            btnDelete.AutoSize = true;
             btnDelete.BackColor = Color.FromArgb(73, 48, 68);
             btnDelete.Enabled = false;
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(223, 165);
+            btnDelete.Location = new Point(205, 140);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(161, 56);
+            btnDelete.Size = new Size(155, 40);
             btnDelete.TabIndex = 25;
             btnDelete.Tag = "Danger";
             btnDelete.Text = "Delete Potion";
@@ -159,16 +161,15 @@
             // 
             // btnConsume
             // 
-            btnConsume.AutoSize = true;
             btnConsume.BackColor = Color.FromArgb(128, 90, 202);
             btnConsume.Enabled = false;
             btnConsume.FlatAppearance.BorderSize = 0;
             btnConsume.FlatStyle = FlatStyle.Flat;
             btnConsume.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnConsume.ForeColor = Color.White;
-            btnConsume.Location = new Point(22, 165);
+            btnConsume.Location = new Point(20, 140);
             btnConsume.Name = "btnConsume";
-            btnConsume.Size = new Size(190, 56);
+            btnConsume.Size = new Size(170, 40);
             btnConsume.TabIndex = 24;
             btnConsume.Tag = "Primary";
             btnConsume.Text = "Consume Potion";
@@ -177,12 +178,11 @@
             // 
             // lblSelectedEffect
             // 
-            lblSelectedEffect.AutoSize = true;
-            lblSelectedEffect.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSelectedEffect.ForeColor = Color.FromArgb(185, 179, 206);
-            lblSelectedEffect.Location = new Point(22, 111);
+            lblSelectedEffect.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSelectedEffect.ForeColor = Color.FromArgb(246, 240, 255);
+            lblSelectedEffect.Location = new Point(22, 103);
             lblSelectedEffect.Name = "lblSelectedEffect";
-            lblSelectedEffect.Size = new Size(293, 28);
+            lblSelectedEffect.Size = new Size(790, 40);
             lblSelectedEffect.TabIndex = 23;
             lblSelectedEffect.Text = "Select a potion to view its effect.";
             // 
@@ -191,7 +191,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(196, 167, 255);
-            label3.Location = new Point(22, 67);
+            label3.Location = new Point(22, 61);
             label3.Name = "label3";
             label3.Size = new Size(127, 28);
             label3.TabIndex = 22;
@@ -201,20 +201,41 @@
             // 
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(246, 240, 255);
-            label4.Location = new Point(22, 17);
+            label4.Location = new Point(20, 15);
             label4.Name = "label4";
-            label4.Size = new Size(385, 39);
+            label4.Size = new Size(350, 30);
             label4.TabIndex = 21;
             label4.Text = "Potion Details";
+            // 
+            // pnlPotionLibrary
+            // 
+            pnlPotionLibrary.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlPotionLibrary.BackColor = Color.FromArgb(41, 38, 60);
+            pnlPotionLibrary.Controls.Add(label1);
+            pnlPotionLibrary.Controls.Add(dgvPotions);
+            pnlPotionLibrary.Location = new Point(30, 115);
+            pnlPotionLibrary.Name = "pnlPotionLibrary";
+            pnlPotionLibrary.Size = new Size(870, 310);
+            pnlPotionLibrary.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(246, 240, 255);
+            label1.Location = new Point(20, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(350, 30);
+            label1.TabIndex = 21;
+            label1.Text = "Potion Collection";
             // 
             // PotionsForm
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(1045, 684);
-            Controls.Add(panel1);
-            Controls.Add(dgvPotions);
+            ClientSize = new Size(950, 690);
+            Controls.Add(pnlPotionLibrary);
+            Controls.Add(pnlPotionDetails);
             Controls.Add(lblSubtitle);
             Controls.Add(lblTitle);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -224,8 +245,9 @@
             Load += PotionsForm_Load;
             Shown += PotionsForm_Shown;
             ((System.ComponentModel.ISupportInitialize)dgvPotions).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlPotionDetails.ResumeLayout(false);
+            pnlPotionDetails.PerformLayout();
+            pnlPotionLibrary.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,7 +257,7 @@
         private Label lblSubtitle;
         private Label lblTitle;
         private DataGridView dgvPotions;
-        private Panel panel1;
+        private Panel pnlPotionDetails;
         private Label label4;
         private Label label3;
         private Label lblSelectedEffect;
@@ -246,5 +268,7 @@
         private DataGridViewTextBoxColumn colEffect;
         private DataGridViewTextBoxColumn colBrewedAt;
         private DataGridViewTextBoxColumn colPotionStatus;
+        private Panel pnlPotionLibrary;
+        private Label label1;
     }
 }
