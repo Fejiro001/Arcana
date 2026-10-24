@@ -93,7 +93,10 @@
             // dgvRecipes
             // 
             dgvRecipes.AllowUserToAddRows = false;
+            dgvRecipes.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dgvRecipes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRecipes.BackgroundColor = Color.FromArgb(41, 38, 60);
+            dgvRecipes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -122,7 +125,6 @@
             ID.Name = "ID";
             ID.ReadOnly = true;
             ID.Visible = false;
-            ID.Width = 150;
             // 
             // colRecipeName
             // 
@@ -131,7 +133,6 @@
             colRecipeName.MinimumWidth = 8;
             colRecipeName.Name = "colRecipeName";
             colRecipeName.ReadOnly = true;
-            colRecipeName.Width = 150;
             // 
             // colEffect
             // 
@@ -140,7 +141,6 @@
             colEffect.MinimumWidth = 8;
             colEffect.Name = "colEffect";
             colEffect.ReadOnly = true;
-            colEffect.Width = 150;
             // 
             // colElement
             // 
@@ -149,7 +149,6 @@
             colElement.MinimumWidth = 8;
             colElement.Name = "colElement";
             colElement.ReadOnly = true;
-            colElement.Width = 150;
             // 
             // colDuration
             // 
@@ -158,7 +157,6 @@
             colDuration.MinimumWidth = 8;
             colDuration.Name = "colDuration";
             colDuration.ReadOnly = true;
-            colDuration.Width = 150;
             // 
             // colRecipeStatus
             // 
@@ -167,7 +165,6 @@
             colRecipeStatus.MinimumWidth = 8;
             colRecipeStatus.Name = "colRecipeStatus";
             colRecipeStatus.ReadOnly = true;
-            colRecipeStatus.Width = 150;
             // 
             // label1
             // 
@@ -182,6 +179,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(41, 38, 60);
             panel1.Controls.Add(btnClearRecipe);
             panel1.Controls.Add(btnRetireRecipe);
@@ -290,6 +288,7 @@
             // dgvRecipeIngredients
             // 
             dgvRecipeIngredients.AllowUserToAddRows = false;
+            dgvRecipeIngredients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRecipeIngredients.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvRecipeIngredients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRecipeIngredients.Columns.AddRange(new DataGridViewColumn[] { colIngredientName, colRequiredQuantity, colIngredientUnit });
@@ -308,7 +307,6 @@
             colIngredientName.MinimumWidth = 8;
             colIngredientName.Name = "colIngredientName";
             colIngredientName.ReadOnly = true;
-            colIngredientName.Width = 150;
             // 
             // colRequiredQuantity
             // 
@@ -317,7 +315,6 @@
             colRequiredQuantity.MinimumWidth = 8;
             colRequiredQuantity.Name = "colRequiredQuantity";
             colRequiredQuantity.ReadOnly = true;
-            colRequiredQuantity.Width = 150;
             // 
             // colIngredientUnit
             // 
@@ -326,7 +323,6 @@
             colIngredientUnit.MinimumWidth = 8;
             colIngredientUnit.Name = "colIngredientUnit";
             colIngredientUnit.ReadOnly = true;
-            colIngredientUnit.Width = 150;
             // 
             // btnAddIngredientToRecipe
             // 
@@ -380,6 +376,7 @@
             // 
             // divider
             // 
+            divider.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             divider.BorderStyle = BorderStyle.FixedSingle;
             divider.Location = new Point(10, 235);
             divider.Name = "divider";
