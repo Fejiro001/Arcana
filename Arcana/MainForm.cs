@@ -1,10 +1,11 @@
-using Arcana.Data;
 using Arcana.Forms;
+using Arcana.Repositories;
 
 namespace Arcana
 {
     public partial class MainForm : Form
     {
+        private readonly DashboardRepository _dashboardRepository = new();
         private Form? _activePage;
 
         public MainForm()
@@ -13,20 +14,63 @@ namespace Arcana
         }
         private void LoadDashboard()
         {
-            using var context = new AlchemyContext();
+            LoadDashboardCounts();
+            LoadRecentBrews();
+            LoadSuggestedRecipe();
+        }
 
-            int ingredientCount = context.Ingredients
-                .Count(i => i.IsActive);
+        private void LoadDashboardCounts()
+        {
+            var counts = _dashboardRepository.GetCounts();
 
-            int recipeCount = context.Recipes
-                .Count(r => r.IsActive);
+            lblIngredientCount.Text = counts.Ingredients.ToString();
+            lblRecipeCount.Text = counts.Recipes.ToString();
+            lblPotionCount.Text = counts.Potions.ToString();
+        }
 
-            int potionCount = context.BrewedPotions
-                .Count(p => p.Status == "Available");
+        private void LoadRecentBrews()
+        {
+            var brews = _dashboardRepository.GetRecentBrews();
 
-            lblIngredientCount.Text = ingredientCount.ToString();
-            lblRecipeCount.Text = recipeCount.ToString();
-            lblPotionCount.Text = potionCount.ToString();
+            lstRecentBrews.Items.Clear();
+
+            lblRecentActivityEmpty.Visible = brews.Count == 0;
+            lstRecentBrews.Visible = brews.Count > 0;
+
+            foreach (var brew in brews)
+            {
+                DateTime localTime = DateTime
+                    .SpecifyKind(brew.BrewedAt, DateTimeKind.Utc)
+                    .ToLocalTime();
+
+                string activity = $"{brew.Name} - {localTime:MMM dd, yyyy h:mm tt}";
+
+                lstRecentBrews.Items.Add(activity);
+            }
+        }
+
+        private void LoadSuggestedRecipe()
+        {
+            var recipe = _dashboardRepository.GetSuggestedRecipe();
+
+            if (recipe == null)
+            {
+                lblSuggestedRecipe.Text = "No brewable recipes available";
+
+                lblBrewingDescription.Text = "Check your recipes and ingredient iinventory.";
+
+                btnStartBrewing.Enabled = _dashboardRepository.GetCounts().Recipes > 0;
+
+                return;
+            }
+
+            lblSuggestedRecipe.Text = recipe.Name;
+
+            lblBrewingDescription.Text =
+                $"{recipe.Element} ● {recipe.Effect} ● " +
+                $"{recipe.DurationSeconds} seconds";
+
+            btnStartBrewing.Enabled = true;
         }
 
         private void MainForm_Load(object sender, EventArgs e)

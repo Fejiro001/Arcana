@@ -41,8 +41,10 @@
             pnlContent = new Panel();
             pnlRecentActivity = new Panel();
             lblRecentActivityEmpty = new Label();
+            lstRecentBrews = new ListBox();
             lblRecentActivityTitle = new Label();
             pnlBrewingStation = new Panel();
+            lblSuggestedRecipe = new Label();
             btnStartBrewing = new Button();
             lblBrewingDescription = new Label();
             lblBrewingTitle = new Label();
@@ -80,7 +82,7 @@
             tblMainLayout.Name = "tblMainLayout";
             tblMainLayout.RowCount = 1;
             tblMainLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tblMainLayout.Size = new Size(1178, 704);
+            tblMainLayout.Size = new Size(1178, 790);
             tblMainLayout.TabIndex = 0;
             // 
             // pnlSidebar
@@ -98,7 +100,7 @@
             pnlSidebar.Location = new Point(0, 0);
             pnlSidebar.Margin = new Padding(0);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(220, 704);
+            pnlSidebar.Size = new Size(220, 790);
             pnlSidebar.TabIndex = 0;
             // 
             // btnReports
@@ -233,28 +235,44 @@
             pnlContent.Location = new Point(220, 0);
             pnlContent.Margin = new Padding(0);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(958, 704);
+            pnlContent.Size = new Size(958, 790);
             pnlContent.TabIndex = 1;
             // 
             // pnlRecentActivity
             // 
             pnlRecentActivity.BackColor = Color.FromArgb(41, 38, 60);
             pnlRecentActivity.Controls.Add(lblRecentActivityEmpty);
+            pnlRecentActivity.Controls.Add(lstRecentBrews);
             pnlRecentActivity.Controls.Add(lblRecentActivityTitle);
-            pnlRecentActivity.Location = new Point(30, 480);
+            pnlRecentActivity.Location = new Point(30, 518);
             pnlRecentActivity.Name = "pnlRecentActivity";
-            pnlRecentActivity.Size = new Size(820, 160);
+            pnlRecentActivity.Size = new Size(820, 243);
             pnlRecentActivity.TabIndex = 6;
             // 
             // lblRecentActivityEmpty
             // 
             lblRecentActivityEmpty.AutoSize = true;
+            lblRecentActivityEmpty.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRecentActivityEmpty.ForeColor = Color.FromArgb(185, 179, 206);
-            lblRecentActivityEmpty.Location = new Point(20, 85);
+            lblRecentActivityEmpty.Location = new Point(20, 68);
             lblRecentActivityEmpty.Name = "lblRecentActivityEmpty";
             lblRecentActivityEmpty.Size = new Size(264, 32);
-            lblRecentActivityEmpty.TabIndex = 1;
+            lblRecentActivityEmpty.TabIndex = 2;
             lblRecentActivityEmpty.Text = "No potions brewed yet.";
+            // 
+            // lstRecentBrews
+            // 
+            lstRecentBrews.BackColor = Color.FromArgb(41, 38, 60);
+            lstRecentBrews.BorderStyle = BorderStyle.None;
+            lstRecentBrews.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lstRecentBrews.ForeColor = Color.FromArgb(246, 240, 255);
+            lstRecentBrews.FormattingEnabled = true;
+            lstRecentBrews.ItemHeight = 28;
+            lstRecentBrews.Location = new Point(20, 107);
+            lstRecentBrews.Name = "lstRecentBrews";
+            lstRecentBrews.SelectionMode = SelectionMode.None;
+            lstRecentBrews.Size = new Size(780, 84);
+            lstRecentBrews.TabIndex = 1;
             // 
             // lblRecentActivityTitle
             // 
@@ -270,22 +288,34 @@
             // pnlBrewingStation
             // 
             pnlBrewingStation.BackColor = Color.FromArgb(41, 38, 60);
+            pnlBrewingStation.Controls.Add(lblSuggestedRecipe);
             pnlBrewingStation.Controls.Add(btnStartBrewing);
             pnlBrewingStation.Controls.Add(lblBrewingDescription);
             pnlBrewingStation.Controls.Add(lblBrewingTitle);
-            pnlBrewingStation.Location = new Point(30, 280);
+            pnlBrewingStation.Location = new Point(30, 279);
             pnlBrewingStation.Name = "pnlBrewingStation";
-            pnlBrewingStation.Size = new Size(820, 180);
+            pnlBrewingStation.Size = new Size(820, 213);
             pnlBrewingStation.TabIndex = 5;
+            // 
+            // lblSuggestedRecipe
+            // 
+            lblSuggestedRecipe.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblSuggestedRecipe.ForeColor = Color.FromArgb(196, 167, 255);
+            lblSuggestedRecipe.Location = new Point(20, 61);
+            lblSuggestedRecipe.Name = "lblSuggestedRecipe";
+            lblSuggestedRecipe.Size = new Size(650, 42);
+            lblSuggestedRecipe.TabIndex = 3;
+            lblSuggestedRecipe.Text = "Finding a recipe...";
             // 
             // btnStartBrewing
             // 
             btnStartBrewing.BackColor = Color.FromArgb(128, 90, 202);
+            btnStartBrewing.Cursor = Cursors.Hand;
             btnStartBrewing.FlatAppearance.BorderSize = 0;
             btnStartBrewing.FlatStyle = FlatStyle.Flat;
             btnStartBrewing.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStartBrewing.ForeColor = Color.White;
-            btnStartBrewing.Location = new Point(20, 120);
+            btnStartBrewing.Location = new Point(20, 150);
             btnStartBrewing.Name = "btnStartBrewing";
             btnStartBrewing.Size = new Size(160, 40);
             btnStartBrewing.TabIndex = 2;
@@ -296,10 +326,11 @@
             // lblBrewingDescription
             // 
             lblBrewingDescription.AutoSize = true;
+            lblBrewingDescription.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBrewingDescription.ForeColor = Color.FromArgb(185, 179, 206);
-            lblBrewingDescription.Location = new Point(20, 75);
+            lblBrewingDescription.Location = new Point(20, 101);
             lblBrewingDescription.Name = "lblBrewingDescription";
-            lblBrewingDescription.Size = new Size(579, 32);
+            lblBrewingDescription.Size = new Size(470, 28);
             lblBrewingDescription.TabIndex = 1;
             lblBrewingDescription.Text = "Select a recipe and begin your next magical creation.";
             // 
@@ -327,12 +358,13 @@
             // lblPotionTitle
             // 
             lblPotionTitle.AutoSize = true;
+            lblPotionTitle.Font = new Font("Segoe UI", 10F);
             lblPotionTitle.ForeColor = Color.FromArgb(185, 179, 206);
             lblPotionTitle.Location = new Point(20, 85);
             lblPotionTitle.Name = "lblPotionTitle";
-            lblPotionTitle.Size = new Size(178, 32);
+            lblPotionTitle.Size = new Size(162, 28);
             lblPotionTitle.TabIndex = 1;
-            lblPotionTitle.Text = "Brewed Potions";
+            lblPotionTitle.Text = "Available Potions";
             // 
             // lblPotionCount
             // 
@@ -358,10 +390,11 @@
             // lblRecipeTitle
             // 
             lblRecipeTitle.AutoSize = true;
+            lblRecipeTitle.Font = new Font("Segoe UI", 10F);
             lblRecipeTitle.ForeColor = Color.FromArgb(185, 179, 206);
             lblRecipeTitle.Location = new Point(20, 85);
             lblRecipeTitle.Name = "lblRecipeTitle";
-            lblRecipeTitle.Size = new Size(197, 32);
+            lblRecipeTitle.Size = new Size(162, 28);
             lblRecipeTitle.TabIndex = 1;
             lblRecipeTitle.Text = "Available Recipes";
             // 
@@ -389,12 +422,13 @@
             // lblIngredientTitle
             // 
             lblIngredientTitle.AutoSize = true;
+            lblIngredientTitle.Font = new Font("Segoe UI", 10F);
             lblIngredientTitle.ForeColor = Color.FromArgb(185, 179, 206);
             lblIngredientTitle.Location = new Point(20, 85);
             lblIngredientTitle.Name = "lblIngredientTitle";
-            lblIngredientTitle.Size = new Size(134, 32);
+            lblIngredientTitle.Size = new Size(169, 28);
             lblIngredientTitle.TabIndex = 1;
-            lblIngredientTitle.Text = "Ingredients";
+            lblIngredientTitle.Text = "Active Ingredients";
             // 
             // lblIngredientCount
             // 
@@ -433,7 +467,7 @@
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(1178, 704);
+            ClientSize = new Size(1178, 790);
             Controls.Add(tblMainLayout);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MinimumSize = new Size(1050, 680);
@@ -489,7 +523,9 @@
         private Label lblBrewingDescription;
         private Panel pnlRecentActivity;
         private Label lblRecentActivityTitle;
-        private Label lblRecentActivityEmpty;
         private Button btnStartBrewing;
+        private Label lblSuggestedRecipe;
+        private ListBox lstRecentBrews;
+        private Label lblRecentActivityEmpty;
     }
 }
