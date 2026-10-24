@@ -56,7 +56,7 @@
             // lblSubtitle
             // 
             lblSubtitle.ForeColor = Color.FromArgb(185, 179, 206);
-            lblSubtitle.Location = new Point(12, 69);
+            lblSubtitle.Location = new Point(32, 75);
             lblSubtitle.Name = "lblSubtitle";
             lblSubtitle.Size = new Size(600, 25);
             lblSubtitle.TabIndex = 4;
@@ -67,7 +67,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(246, 240, 255);
-            lblTitle.Location = new Point(12, 9);
+            lblTitle.Location = new Point(20, 15);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(358, 60);
             lblTitle.TabIndex = 3;
@@ -75,6 +75,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(41, 38, 60);
             panel1.Controls.Add(btnBrew);
             panel1.Controls.Add(lblStatus);
@@ -92,7 +93,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(cmbRecipes);
-            panel1.Location = new Point(12, 115);
+            panel1.Location = new Point(32, 115);
             panel1.Name = "panel1";
             panel1.Size = new Size(881, 771);
             panel1.TabIndex = 5;
