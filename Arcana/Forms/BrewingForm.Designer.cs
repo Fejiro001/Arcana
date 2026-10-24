@@ -67,7 +67,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(246, 240, 255);
-            lblTitle.Location = new Point(22, 17);
+            lblTitle.Location = new Point(35, 9);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(358, 60);
             lblTitle.TabIndex = 3;
@@ -100,6 +100,7 @@
             // 
             // btnBrew
             // 
+            btnBrew.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnBrew.AutoSize = true;
             btnBrew.BackColor = Color.FromArgb(128, 90, 202);
             btnBrew.FlatAppearance.BorderSize = 0;
@@ -108,7 +109,7 @@
             btnBrew.ForeColor = Color.White;
             btnBrew.Location = new Point(33, 777);
             btnBrew.Name = "btnBrew";
-            btnBrew.Size = new Size(889, 62);
+            btnBrew.Size = new Size(826, 63);
             btnBrew.TabIndex = 27;
             btnBrew.Text = "Start Brewing";
             btnBrew.UseVisualStyleBackColor = false;
@@ -138,6 +139,7 @@
             // 
             // progressBarBrew
             // 
+            progressBarBrew.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             progressBarBrew.BackColor = Color.FromArgb(25, 24, 39);
             progressBarBrew.Location = new Point(33, 656);
             progressBarBrew.Name = "progressBarBrew";
@@ -156,6 +158,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label6.BorderStyle = BorderStyle.FixedSingle;
             label6.Location = new Point(25, 588);
             label6.Name = "label6";
@@ -164,6 +167,7 @@
             // 
             // lstRequirements
             // 
+            lstRequirements.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lstRequirements.BackColor = Color.FromArgb(25, 24, 39);
             lstRequirements.BorderStyle = BorderStyle.FixedSingle;
             lstRequirements.ForeColor = Color.White;
@@ -186,6 +190,7 @@
             // 
             // divider
             // 
+            divider.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             divider.BorderStyle = BorderStyle.FixedSingle;
             divider.Location = new Point(22, 296);
             divider.Name = "divider";
@@ -257,6 +262,7 @@
             // 
             // cmbRecipes
             // 
+            cmbRecipes.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cmbRecipes.BackColor = Color.FromArgb(25, 24, 39);
             cmbRecipes.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbRecipes.FlatStyle = FlatStyle.Flat;
