@@ -50,10 +50,12 @@
             colUnit = new DataGridViewTextBoxColumn();
             label5 = new Label();
             label6 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPopularPotions).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvIngredientUsage).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblSubtitle
@@ -111,9 +113,11 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lblTotalBrewed);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(21, 227);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(0, 0, 12, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(377, 150);
+            panel1.Size = new Size(452, 150);
             panel1.TabIndex = 10;
             // 
             // label3
@@ -153,9 +157,11 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(lblTotalConsumed);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(424, 227);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(464, 0);
+            panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(363, 150);
+            panel2.Size = new Size(464, 150);
             panel2.TabIndex = 11;
             // 
             // label4
@@ -198,11 +204,12 @@
             dgvPopularPotions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPopularPotions.Columns.AddRange(new DataGridViewColumn[] { colPotionName, colBrewCount });
             dgvPopularPotions.Location = new Point(21, 429);
+            dgvPopularPotions.Margin = new Padding(3, 3, 12, 3);
             dgvPopularPotions.Name = "dgvPopularPotions";
             dgvPopularPotions.ReadOnly = true;
             dgvPopularPotions.RowHeadersVisible = false;
             dgvPopularPotions.RowHeadersWidth = 62;
-            dgvPopularPotions.Size = new Size(816, 175);
+            dgvPopularPotions.Size = new Size(928, 175);
             dgvPopularPotions.TabIndex = 12;
             // 
             // colPotionName
@@ -230,11 +237,12 @@
             dgvIngredientUsage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvIngredientUsage.Columns.AddRange(new DataGridViewColumn[] { colIngredientName, colQuantityUsed, colUnit });
             dgvIngredientUsage.Location = new Point(21, 658);
+            dgvIngredientUsage.Margin = new Padding(3, 3, 12, 3);
             dgvIngredientUsage.Name = "dgvIngredientUsage";
             dgvIngredientUsage.ReadOnly = true;
             dgvIngredientUsage.RowHeadersVisible = false;
             dgvIngredientUsage.RowHeadersWidth = 62;
-            dgvIngredientUsage.Size = new Size(816, 180);
+            dgvIngredientUsage.Size = new Size(928, 180);
             dgvIngredientUsage.TabIndex = 13;
             // 
             // colIngredientName
@@ -281,6 +289,23 @@
             label6.TabIndex = 15;
             label6.Text = "Most Consumed Ingredients";
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(panel1, 0, 0);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
+            tableLayoutPanel1.Location = new Point(21, 218);
+            tableLayoutPanel1.Margin = new Padding(3, 3, 12, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(928, 150);
+            tableLayoutPanel1.TabIndex = 16;
+            // 
             // ReportsForm
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -288,12 +313,11 @@
             AutoScroll = true;
             BackColor = Color.FromArgb(25, 24, 39);
             ClientSize = new Size(950, 850);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(dgvIngredientUsage);
             Controls.Add(dgvPopularPotions);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             Controls.Add(btnGenerate);
             Controls.Add(dtpEnd);
             Controls.Add(dtpStart);
@@ -310,6 +334,7 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPopularPotions).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvIngredientUsage).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -338,5 +363,6 @@
         private DataGridViewTextBoxColumn colIngredientName;
         private DataGridViewTextBoxColumn colQuantityUsed;
         private DataGridViewTextBoxColumn colUnit;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }
