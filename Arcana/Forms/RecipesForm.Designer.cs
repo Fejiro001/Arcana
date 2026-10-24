@@ -75,7 +75,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(246, 240, 255);
-            lblTitle.Location = new Point(12, 9);
+            lblTitle.Location = new Point(13, 10);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(330, 60);
             lblTitle.TabIndex = 0;
@@ -84,9 +84,9 @@
             // lblSubtitle
             // 
             lblSubtitle.ForeColor = Color.FromArgb(185, 179, 206);
-            lblSubtitle.Location = new Point(12, 69);
+            lblSubtitle.Location = new Point(13, 77);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(600, 25);
+            lblSubtitle.Size = new Size(660, 28);
             lblSubtitle.TabIndex = 2;
             lblSubtitle.Text = "Create and manage your magical formulas";
             // 
@@ -107,12 +107,12 @@
             dgvRecipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvRecipes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRecipes.Columns.AddRange(new DataGridViewColumn[] { ID, colRecipeName, colEffect, colElement, colDuration, colRecipeStatus });
-            dgvRecipes.Location = new Point(12, 159);
+            dgvRecipes.Location = new Point(13, 178);
             dgvRecipes.Name = "dgvRecipes";
             dgvRecipes.ReadOnly = true;
             dgvRecipes.RowHeadersWidth = 62;
             dgvRecipes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRecipes.Size = new Size(816, 225);
+            dgvRecipes.Size = new Size(898, 252);
             dgvRecipes.TabIndex = 3;
             dgvRecipes.CellFormatting += dgvRecipes_CellFormatting;
             dgvRecipes.SelectionChanged += dgvRecipes_SelectionChanged;
@@ -171,9 +171,9 @@
             label1.BackColor = Color.FromArgb(25, 24, 39);
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(246, 240, 255);
-            label1.Location = new Point(12, 107);
+            label1.Location = new Point(13, 120);
             label1.Name = "label1";
-            label1.Size = new Size(350, 35);
+            label1.Size = new Size(385, 39);
             label1.TabIndex = 4;
             label1.Text = "Recipe Library";
             // 
@@ -201,9 +201,9 @@
             panel1.Controls.Add(lblRecipeName);
             panel1.Controls.Add(txtRecipeName);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(12, 409);
+            panel1.Location = new Point(13, 458);
             panel1.Name = "panel1";
-            panel1.Size = new Size(816, 779);
+            panel1.Size = new Size(898, 872);
             panel1.TabIndex = 5;
             // 
             // btnClearRecipe
@@ -213,9 +213,9 @@
             btnClearRecipe.FlatStyle = FlatStyle.Flat;
             btnClearRecipe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnClearRecipe.ForeColor = Color.White;
-            btnClearRecipe.Location = new Point(431, 695);
+            btnClearRecipe.Location = new Point(474, 778);
             btnClearRecipe.Name = "btnClearRecipe";
-            btnClearRecipe.Size = new Size(115, 40);
+            btnClearRecipe.Size = new Size(126, 45);
             btnClearRecipe.TabIndex = 28;
             btnClearRecipe.Text = "Clear";
             btnClearRecipe.UseVisualStyleBackColor = false;
@@ -229,9 +229,9 @@
             btnRetireRecipe.FlatStyle = FlatStyle.Flat;
             btnRetireRecipe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnRetireRecipe.ForeColor = Color.White;
-            btnRetireRecipe.Location = new Point(296, 695);
+            btnRetireRecipe.Location = new Point(326, 778);
             btnRetireRecipe.Name = "btnRetireRecipe";
-            btnRetireRecipe.Size = new Size(115, 40);
+            btnRetireRecipe.Size = new Size(126, 45);
             btnRetireRecipe.TabIndex = 27;
             btnRetireRecipe.Text = "Retire";
             btnRetireRecipe.UseVisualStyleBackColor = false;
@@ -245,9 +245,9 @@
             btnUpdateRecipe.FlatStyle = FlatStyle.Flat;
             btnUpdateRecipe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnUpdateRecipe.ForeColor = Color.White;
-            btnUpdateRecipe.Location = new Point(160, 695);
+            btnUpdateRecipe.Location = new Point(176, 778);
             btnUpdateRecipe.Name = "btnUpdateRecipe";
-            btnUpdateRecipe.Size = new Size(115, 40);
+            btnUpdateRecipe.Size = new Size(126, 45);
             btnUpdateRecipe.TabIndex = 26;
             btnUpdateRecipe.Text = "Update";
             btnUpdateRecipe.UseVisualStyleBackColor = false;
@@ -261,9 +261,9 @@
             btnAddRecipe.FlatStyle = FlatStyle.Flat;
             btnAddRecipe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnAddRecipe.ForeColor = Color.White;
-            btnAddRecipe.Location = new Point(25, 695);
+            btnAddRecipe.Location = new Point(28, 778);
             btnAddRecipe.Name = "btnAddRecipe";
-            btnAddRecipe.Size = new Size(115, 40);
+            btnAddRecipe.Size = new Size(126, 45);
             btnAddRecipe.TabIndex = 25;
             btnAddRecipe.Text = "Create";
             btnAddRecipe.UseVisualStyleBackColor = false;
@@ -277,9 +277,9 @@
             btnRemoveIngredientFromRecipe.FlatStyle = FlatStyle.Flat;
             btnRemoveIngredientFromRecipe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnRemoveIngredientFromRecipe.ForeColor = Color.White;
-            btnRemoveIngredientFromRecipe.Location = new Point(25, 627);
+            btnRemoveIngredientFromRecipe.Location = new Point(385, 704);
             btnRemoveIngredientFromRecipe.Name = "btnRemoveIngredientFromRecipe";
-            btnRemoveIngredientFromRecipe.Size = new Size(196, 40);
+            btnRemoveIngredientFromRecipe.Size = new Size(216, 45);
             btnRemoveIngredientFromRecipe.TabIndex = 24;
             btnRemoveIngredientFromRecipe.Text = "Remove Ingredient";
             btnRemoveIngredientFromRecipe.UseVisualStyleBackColor = false;
@@ -292,12 +292,12 @@
             dgvRecipeIngredients.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvRecipeIngredients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRecipeIngredients.Columns.AddRange(new DataGridViewColumn[] { colIngredientName, colRequiredQuantity, colIngredientUnit });
-            dgvRecipeIngredients.Location = new Point(25, 357);
+            dgvRecipeIngredients.Location = new Point(28, 400);
             dgvRecipeIngredients.Name = "dgvRecipeIngredients";
             dgvRecipeIngredients.ReadOnly = true;
             dgvRecipeIngredients.RowHeadersWidth = 62;
             dgvRecipeIngredients.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRecipeIngredients.Size = new Size(521, 251);
+            dgvRecipeIngredients.Size = new Size(573, 281);
             dgvRecipeIngredients.TabIndex = 23;
             // 
             // colIngredientName
@@ -332,9 +332,9 @@
             btnAddIngredientToRecipe.FlatStyle = FlatStyle.Flat;
             btnAddIngredientToRecipe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnAddIngredientToRecipe.ForeColor = Color.White;
-            btnAddIngredientToRecipe.Location = new Point(527, 296);
+            btnAddIngredientToRecipe.Location = new Point(729, 333);
             btnAddIngredientToRecipe.Name = "btnAddIngredientToRecipe";
-            btnAddIngredientToRecipe.Size = new Size(115, 40);
+            btnAddIngredientToRecipe.Size = new Size(126, 45);
             btnAddIngredientToRecipe.TabIndex = 22;
             btnAddIngredientToRecipe.Text = "+ Add";
             btnAddIngredientToRecipe.UseVisualStyleBackColor = false;
@@ -345,11 +345,11 @@
             nudQuantity.BackColor = Color.FromArgb(25, 24, 39);
             nudQuantity.BorderStyle = BorderStyle.FixedSingle;
             nudQuantity.ForeColor = Color.FromArgb(246, 240, 255);
-            nudQuantity.Location = new Point(296, 304);
+            nudQuantity.Location = new Point(489, 340);
             nudQuantity.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nudQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(225, 31);
+            nudQuantity.Size = new Size(211, 34);
             nudQuantity.TabIndex = 21;
             nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -359,18 +359,18 @@
             cmbIngredient.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbIngredient.ForeColor = Color.FromArgb(246, 240, 255);
             cmbIngredient.FormattingEnabled = true;
-            cmbIngredient.Location = new Point(25, 302);
+            cmbIngredient.Location = new Point(28, 338);
             cmbIngredient.Name = "cmbIngredient";
-            cmbIngredient.Size = new Size(250, 33);
+            cmbIngredient.Size = new Size(432, 36);
             cmbIngredient.TabIndex = 20;
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(246, 240, 255);
-            label3.Location = new Point(17, 253);
+            label3.Location = new Point(19, 283);
             label3.Name = "label3";
-            label3.Size = new Size(350, 35);
+            label3.Size = new Size(385, 39);
             label3.TabIndex = 19;
             label3.Text = "Required Ingredients";
             // 
@@ -378,17 +378,17 @@
             // 
             divider.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             divider.BorderStyle = BorderStyle.FixedSingle;
-            divider.Location = new Point(10, 235);
+            divider.Location = new Point(11, 263);
             divider.Name = "divider";
-            divider.Size = new Size(667, 2);
+            divider.Size = new Size(734, 2);
             divider.TabIndex = 18;
             // 
             // lblDuration
             // 
             lblDuration.ForeColor = Color.FromArgb(185, 179, 206);
-            lblDuration.Location = new Point(245, 145);
+            lblDuration.Location = new Point(432, 162);
             lblDuration.Name = "lblDuration";
-            lblDuration.Size = new Size(190, 25);
+            lblDuration.Size = new Size(209, 28);
             lblDuration.TabIndex = 17;
             lblDuration.Text = "Brewing Duration";
             // 
@@ -397,20 +397,20 @@
             nudDuration.BackColor = Color.FromArgb(25, 24, 39);
             nudDuration.BorderStyle = BorderStyle.FixedSingle;
             nudDuration.ForeColor = Color.FromArgb(246, 240, 255);
-            nudDuration.Location = new Point(245, 175);
+            nudDuration.Location = new Point(432, 196);
             nudDuration.Maximum = new decimal(new int[] { 3600, 0, 0, 0 });
             nudDuration.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudDuration.Name = "nudDuration";
-            nudDuration.Size = new Size(190, 31);
+            nudDuration.Size = new Size(423, 34);
             nudDuration.TabIndex = 16;
             nudDuration.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // lblElement
             // 
             lblElement.ForeColor = Color.FromArgb(185, 179, 206);
-            lblElement.Location = new Point(17, 145);
+            lblElement.Location = new Point(19, 162);
             lblElement.Name = "lblElement";
-            lblElement.Size = new Size(190, 25);
+            lblElement.Size = new Size(209, 28);
             lblElement.TabIndex = 15;
             lblElement.Text = "Element";
             // 
@@ -419,18 +419,18 @@
             txtElement.BackColor = Color.FromArgb(25, 24, 39);
             txtElement.BorderStyle = BorderStyle.FixedSingle;
             txtElement.ForeColor = Color.FromArgb(246, 240, 255);
-            txtElement.Location = new Point(17, 175);
+            txtElement.Location = new Point(19, 196);
             txtElement.Name = "txtElement";
             txtElement.PlaceholderText = "e.g. Fire";
-            txtElement.Size = new Size(190, 31);
+            txtElement.Size = new Size(373, 34);
             txtElement.TabIndex = 14;
             // 
             // lblEffect
             // 
             lblEffect.ForeColor = Color.FromArgb(185, 179, 206);
-            lblEffect.Location = new Point(263, 52);
+            lblEffect.Location = new Point(432, 58);
             lblEffect.Name = "lblEffect";
-            lblEffect.Size = new Size(190, 25);
+            lblEffect.Size = new Size(209, 28);
             lblEffect.TabIndex = 13;
             lblEffect.Text = "Special Effect";
             // 
@@ -439,18 +439,18 @@
             txtEffect.BackColor = Color.FromArgb(25, 24, 39);
             txtEffect.BorderStyle = BorderStyle.FixedSingle;
             txtEffect.ForeColor = Color.FromArgb(246, 240, 255);
-            txtEffect.Location = new Point(263, 82);
+            txtEffect.Location = new Point(432, 92);
             txtEffect.Name = "txtEffect";
             txtEffect.PlaceholderText = "e.g. Restores vitality";
-            txtEffect.Size = new Size(190, 31);
+            txtEffect.Size = new Size(423, 34);
             txtEffect.TabIndex = 12;
             // 
             // lblRecipeName
             // 
             lblRecipeName.ForeColor = Color.FromArgb(185, 179, 206);
-            lblRecipeName.Location = new Point(17, 52);
+            lblRecipeName.Location = new Point(19, 58);
             lblRecipeName.Name = "lblRecipeName";
-            lblRecipeName.Size = new Size(190, 25);
+            lblRecipeName.Size = new Size(209, 28);
             lblRecipeName.TabIndex = 11;
             lblRecipeName.Text = "Recipe Name";
             // 
@@ -459,34 +459,35 @@
             txtRecipeName.BackColor = Color.FromArgb(25, 24, 39);
             txtRecipeName.BorderStyle = BorderStyle.FixedSingle;
             txtRecipeName.ForeColor = Color.FromArgb(246, 240, 255);
-            txtRecipeName.Location = new Point(17, 82);
+            txtRecipeName.Location = new Point(19, 92);
             txtRecipeName.Name = "txtRecipeName";
             txtRecipeName.PlaceholderText = "Enter recipe name";
-            txtRecipeName.Size = new Size(190, 31);
+            txtRecipeName.Size = new Size(373, 34);
             txtRecipeName.TabIndex = 10;
             // 
             // label2
             // 
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(246, 240, 255);
-            label2.Location = new Point(6, 6);
+            label2.Location = new Point(7, 7);
             label2.Name = "label2";
-            label2.Size = new Size(350, 35);
+            label2.Size = new Size(385, 39);
             label2.TabIndex = 1;
             label2.Text = "Recipe Details";
             // 
             // RecipesForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(950, 1200);
+            ClientSize = new Size(1045, 1344);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(dgvRecipes);
             Controls.Add(lblSubtitle);
             Controls.Add(lblTitle);
+            Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RecipesForm";
             Text = "RecipesForm";
