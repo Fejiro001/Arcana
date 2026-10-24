@@ -51,11 +51,17 @@
             label5 = new Label();
             label6 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            pnlDateFilters = new Panel();
+            pnlPopularPotions = new Panel();
+            pnlIngredientUsage = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPopularPotions).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvIngredientUsage).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            pnlDateFilters.SuspendLayout();
+            pnlPopularPotions.SuspendLayout();
+            pnlIngredientUsage.SuspendLayout();
             SuspendLayout();
             // 
             // lblSubtitle
@@ -82,25 +88,25 @@
             // 
             dtpStart.CustomFormat = "MMM dd, yyyy";
             dtpStart.Format = DateTimePickerFormat.Custom;
-            dtpStart.Location = new Point(21, 160);
+            dtpStart.Location = new Point(20, 55);
             dtpStart.Name = "dtpStart";
-            dtpStart.Size = new Size(300, 34);
+            dtpStart.Size = new Size(220, 34);
             dtpStart.TabIndex = 7;
             // 
             // dtpEnd
             // 
             dtpEnd.CustomFormat = "MMM dd, yyyy";
             dtpEnd.Format = DateTimePickerFormat.Custom;
-            dtpEnd.Location = new Point(344, 160);
+            dtpEnd.Location = new Point(260, 55);
             dtpEnd.Name = "dtpEnd";
-            dtpEnd.Size = new Size(300, 34);
+            dtpEnd.Size = new Size(220, 34);
             dtpEnd.TabIndex = 8;
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(675, 160);
+            btnGenerate.Location = new Point(510, 53);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(112, 34);
+            btnGenerate.Size = new Size(170, 38);
             btnGenerate.TabIndex = 9;
             btnGenerate.Tag = "Primary";
             btnGenerate.Text = "Generate";
@@ -117,7 +123,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(0, 0, 12, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(452, 150);
+            panel1.Size = new Size(447, 150);
             panel1.TabIndex = 10;
             // 
             // label3
@@ -158,10 +164,10 @@
             panel2.Controls.Add(lblTotalConsumed);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(464, 0);
+            panel2.Location = new Point(459, 0);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(464, 150);
+            panel2.Size = new Size(460, 150);
             panel2.TabIndex = 11;
             // 
             // label4
@@ -203,13 +209,13 @@
             dgvPopularPotions.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvPopularPotions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPopularPotions.Columns.AddRange(new DataGridViewColumn[] { colPotionName, colBrewCount });
-            dgvPopularPotions.Location = new Point(21, 429);
+            dgvPopularPotions.Location = new Point(20, 54);
             dgvPopularPotions.Margin = new Padding(3, 3, 12, 3);
             dgvPopularPotions.Name = "dgvPopularPotions";
             dgvPopularPotions.ReadOnly = true;
             dgvPopularPotions.RowHeadersVisible = false;
             dgvPopularPotions.RowHeadersWidth = 62;
-            dgvPopularPotions.Size = new Size(928, 175);
+            dgvPopularPotions.Size = new Size(887, 175);
             dgvPopularPotions.TabIndex = 12;
             // 
             // colPotionName
@@ -236,13 +242,13 @@
             dgvIngredientUsage.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvIngredientUsage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvIngredientUsage.Columns.AddRange(new DataGridViewColumn[] { colIngredientName, colQuantityUsed, colUnit });
-            dgvIngredientUsage.Location = new Point(21, 658);
+            dgvIngredientUsage.Location = new Point(20, 54);
             dgvIngredientUsage.Margin = new Padding(3, 3, 12, 3);
             dgvIngredientUsage.Name = "dgvIngredientUsage";
             dgvIngredientUsage.ReadOnly = true;
             dgvIngredientUsage.RowHeadersVisible = false;
             dgvIngredientUsage.RowHeadersWidth = 62;
-            dgvIngredientUsage.Size = new Size(928, 180);
+            dgvIngredientUsage.Size = new Size(887, 155);
             dgvIngredientUsage.TabIndex = 13;
             // 
             // colIngredientName
@@ -273,17 +279,17 @@
             // 
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(246, 240, 255);
-            label5.Location = new Point(21, 387);
+            label5.Location = new Point(20, 12);
             label5.Name = "label5";
             label5.Size = new Size(385, 39);
             label5.TabIndex = 14;
-            label5.Text = "Most Brewed Potions";
+            label5.Text = "Most Frequently Brewed Potions";
             // 
             // label6
             // 
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(246, 240, 255);
-            label6.Location = new Point(21, 616);
+            label6.Location = new Point(20, 12);
             label6.Name = "label6";
             label6.Size = new Size(385, 39);
             label6.TabIndex = 15;
@@ -297,14 +303,49 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(panel2, 1, 0);
-            tableLayoutPanel1.Location = new Point(21, 218);
+            tableLayoutPanel1.Location = new Point(30, 255);
             tableLayoutPanel1.Margin = new Padding(3, 3, 12, 3);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(928, 150);
+            tableLayoutPanel1.Size = new Size(919, 150);
             tableLayoutPanel1.TabIndex = 16;
+            // 
+            // pnlDateFilters
+            // 
+            pnlDateFilters.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlDateFilters.BackColor = Color.FromArgb(41, 38, 60);
+            pnlDateFilters.Controls.Add(dtpStart);
+            pnlDateFilters.Controls.Add(dtpEnd);
+            pnlDateFilters.Controls.Add(btnGenerate);
+            pnlDateFilters.Location = new Point(30, 113);
+            pnlDateFilters.Name = "pnlDateFilters";
+            pnlDateFilters.Size = new Size(919, 125);
+            pnlDateFilters.TabIndex = 17;
+            // 
+            // pnlPopularPotions
+            // 
+            pnlPopularPotions.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlPopularPotions.BackColor = Color.FromArgb(41, 38, 60);
+            pnlPopularPotions.Controls.Add(dgvPopularPotions);
+            pnlPopularPotions.Controls.Add(label5);
+            pnlPopularPotions.ForeColor = Color.FromArgb(41, 38, 60);
+            pnlPopularPotions.Location = new Point(30, 428);
+            pnlPopularPotions.Name = "pnlPopularPotions";
+            pnlPopularPotions.Size = new Size(919, 241);
+            pnlPopularPotions.TabIndex = 18;
+            // 
+            // pnlIngredientUsage
+            // 
+            pnlIngredientUsage.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlIngredientUsage.BackColor = Color.FromArgb(41, 38, 60);
+            pnlIngredientUsage.Controls.Add(label6);
+            pnlIngredientUsage.Controls.Add(dgvIngredientUsage);
+            pnlIngredientUsage.Location = new Point(30, 684);
+            pnlIngredientUsage.Name = "pnlIngredientUsage";
+            pnlIngredientUsage.Size = new Size(919, 213);
+            pnlIngredientUsage.TabIndex = 19;
             // 
             // ReportsForm
             // 
@@ -312,16 +353,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(950, 850);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(dgvIngredientUsage);
-            Controls.Add(dgvPopularPotions);
-            Controls.Add(btnGenerate);
-            Controls.Add(dtpEnd);
-            Controls.Add(dtpStart);
+            ClientSize = new Size(950, 923);
+            Controls.Add(pnlIngredientUsage);
+            Controls.Add(pnlPopularPotions);
             Controls.Add(lblSubtitle);
+            Controls.Add(pnlDateFilters);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(lblTitle);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -335,6 +372,9 @@
             ((System.ComponentModel.ISupportInitialize)dgvPopularPotions).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvIngredientUsage).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
+            pnlDateFilters.ResumeLayout(false);
+            pnlPopularPotions.ResumeLayout(false);
+            pnlIngredientUsage.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -364,5 +404,8 @@
         private DataGridViewTextBoxColumn colQuantityUsed;
         private DataGridViewTextBoxColumn colUnit;
         private TableLayoutPanel tableLayoutPanel1;
+        private Panel pnlDateFilters;
+        private Panel pnlPopularPotions;
+        private Panel pnlIngredientUsage;
     }
 }
