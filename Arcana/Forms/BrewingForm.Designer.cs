@@ -131,7 +131,7 @@
             lblProgress.AutoSize = true;
             lblProgress.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProgress.ForeColor = Color.FromArgb(196, 167, 255);
-            lblProgress.Location = new Point(874, 609);
+            lblProgress.Location = new Point(816, 613);
             lblProgress.Name = "lblProgress";
             lblProgress.Size = new Size(43, 30);
             lblProgress.TabIndex = 25;
@@ -143,7 +143,7 @@
             progressBarBrew.BackColor = Color.FromArgb(25, 24, 39);
             progressBarBrew.Location = new Point(33, 656);
             progressBarBrew.Name = "progressBarBrew";
-            progressBarBrew.Size = new Size(892, 38);
+            progressBarBrew.Size = new Size(826, 38);
             progressBarBrew.TabIndex = 24;
             // 
             // label7
