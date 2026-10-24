@@ -62,6 +62,7 @@ Arcana/
 ├── Forms/           # Designer-built WinForms screens and dialogs
 ├── Migrations/      # Versioned EF Core database schema
 ├── Assets/          # Visual assets
+├── UI/
 ├── Program.cs       
 └── Arcana.csproj
 ```
@@ -165,5 +166,38 @@ Brewing timestamps are stored in UTC. Report date controls accept local calendar
 The public Git repository contains incremental, descriptive commits for the database, dashboard, ingredient management, recipes, brewing, potion inventory, reports, and documentation.
 
 ## Screenshots
+### Dashboard
 
-Screenshots of the Dashboard, Ingredients, Recipes, Brewing Station, My Potions, and Reports screens may be placed in `Assets/Screenshots/` and linked here before final submission.
+Overview of active ingredients, available recipes and potions, a suggested brew, and recent brewing activity.
+
+![Arcana dashboard showing workshop summary and recent brewing activity](Screenshots/dashboard.png)
+
+### Ingredient Inventory
+
+View ingredient stock, units, rarity, and status; search the inventory and manage ingredient details.
+
+![Arcana ingredient inventory with stock quantities and ingredient management controls](Screenshots/ingredients.png)
+
+### Potion Recipes
+
+Manage potion formulas, including effects, elements, durations, and required ingredients.
+
+![Arcana recipe management screen with recipe library and ingredient editor](Screenshots/recipes.png)
+
+### Brewing Station
+
+Select a recipe, check ingredient availability, and track brewing progress.
+
+![Arcana brewing station displaying selected recipe and ingredient availability](Screenshots/brewing.png)
+
+### My Potions
+
+View finished potions, inspect their effects, and consume or delete potions.
+
+![Arcana potion inventory displaying brewed potions and potion actions](Screenshots/potions.png)
+
+### Alchemy Reports
+
+Review production totals, popular potions, and ingredient consumption over a selected date range.
+
+![Arcana report dashboard with date filters, brewing throughput and ingredient usage](Screenshots/reports.png)
