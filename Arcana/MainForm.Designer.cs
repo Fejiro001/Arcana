@@ -394,7 +394,7 @@
             lstRecentBrews.Location = new Point(20, 70);
             lstRecentBrews.Name = "lstRecentBrews";
             lstRecentBrews.SelectionMode = SelectionMode.None;
-            lstRecentBrews.Size = new Size(1016, 84);
+            lstRecentBrews.Size = new Size(903, 84);
             lstRecentBrews.TabIndex = 1;
             // 
             // lblRecentActivityTitle
