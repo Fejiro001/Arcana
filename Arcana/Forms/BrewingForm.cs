@@ -49,44 +49,78 @@ namespace Arcana.Forms
 
         private void UpdateSelectedRecipe()
         {
-            lstRequirements.Items.Clear();
+            dgvRequirements.Rows.Clear();
+            btnBrew.Enabled = false;
 
             if (cmbRecipes.SelectedItem is not Recipe selected)
             {
-                lblBrewingRecipeName.Text = "No recipe selected";
-                lblBrewingRecipeEffect.Text = "No recipe selected";
-                lblBrewingRecipeElement.Text = "No recipe selected";
-                lblDuration.Text = "No recipe selected";
-                lblStatus.Text = "No available recipes.";
-                btnBrew.Enabled = false;
+                lblBrewingRecipeName.Text = "No Recipe Selected";
+                lblBrewingRecipeEffect.Text = "—";
+                lblBrewingRecipeElement.Text = "—";
+                lblDuration.Text = "—";
+
+                SetBrewingStatus("No available recipes.", false);
                 return;
             }
 
             var recipe = _recipeRepository.GetById(selected.Id);
 
             if (recipe == null)
+            {
+                SetBrewingStatus("Recipe not found.", false);
                 return;
+            }
 
             lblBrewingRecipeName.Text = recipe.Name;
             lblBrewingRecipeEffect.Text = recipe.Effect;
             lblBrewingRecipeElement.Text = recipe.Element;
-            lblDuration.Text =
-                $"Brewing Time: {recipe.DurationSeconds} seconds";
+            lblDuration.Text = $"{recipe.DurationSeconds} seconds";
 
             foreach (var item in recipe.RecipeIngredients)
             {
-                string requirement =
-                    $"{item.Ingredient.Name}: " +
-                    $"{item.QuantityRequired} {item.Ingredient.Unit} " +
-                    $"(Available: {item.Ingredient.Stock})";
+                bool available = item.Ingredient.IsActive && item.QuantityRequired > 0 && item.Ingredient.Stock >= item.QuantityRequired;
 
-                lstRequirements.Items.Add(requirement);
+                string status = !item.Ingredient.IsActive
+                    ? "Retired"
+                    : available ? "Ready" : "Insufficiient";
+
+                int rowIndex = dgvRequirements.Rows.Add(
+                    item.Ingredient.Name,
+                    $"{item.QuantityRequired} {item.Ingredient.Unit}",
+                    $"{item.Ingredient.Stock} {item.Ingredient.Unit}",
+                    status
+                );
+
+                Color statusColor = available
+                    ? Color.FromArgb(145, 199, 166)
+                    : Color.FromArgb(219, 154, 154);
+
+                var statusCell = dgvRequirements.Rows[rowIndex].Cells["colAvailability"];
+
+                statusCell.Style.ForeColor = statusColor;
+                statusCell.Style.SelectionForeColor = statusColor;
             }
+
+            dgvRequirements.CurrentCell = null;
+            dgvRequirements.ClearSelection();
 
             string? error = _brewingService.GetStockError(recipe.Id);
 
-            lblStatus.Text = error ?? "Ready to brew!";
+            SetBrewingStatus(
+                error ?? "☑ All ingredients available. Ready to brew!",
+                error == null
+            );
+
             btnBrew.Enabled = !_isBrewing && error == null;
+        }
+
+        private void SetBrewingStatus(string message, bool isReady)
+        {
+            lblStatus.Text = message;
+
+            lblStatus.ForeColor = isReady
+                ? Color.FromArgb(145, 199, 166)
+                : Color.FromArgb(219, 154, 154);
         }
 
         private void cmbRecipes_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,6 +161,7 @@ namespace Arcana.Forms
             progressBarBrew.Value = 0;
             lblProgress.Text = "0%";
             lblStatus.Text = $"Brewing {selected.Name}...";
+            lblStatus.ForeColor = Color.FromArgb(196, 167, 255);
 
             btnBrew.Enabled = false;
             cmbRecipes.Enabled = false;
