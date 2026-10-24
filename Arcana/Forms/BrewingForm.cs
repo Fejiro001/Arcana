@@ -1,6 +1,7 @@
 ﻿using Arcana.Models;
 using Arcana.Repositories;
 using Arcana.Services;
+using Arcana.UI;
 using System.Diagnostics;
 
 namespace Arcana.Forms
@@ -22,6 +23,7 @@ namespace Arcana.Forms
         public BrewingForm()
         {
             InitializeComponent();
+            ArcanaTheme.Apply(this);
         }
 
         // Populate dropdown with active recipes

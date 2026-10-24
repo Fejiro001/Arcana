@@ -1,5 +1,6 @@
 ﻿using Arcana.Models;
 using Arcana.Repositories;
+using Arcana.UI;
 using Microsoft.EntityFrameworkCore;
 
 namespace Arcana.Forms
@@ -15,6 +16,8 @@ namespace Arcana.Forms
             InitializeComponent();
 
             dgvIngredients.AutoGenerateColumns = false;
+
+            ArcanaTheme.Apply(this);
         }
 
         private void IngredientsForm_Load(object sender, EventArgs e)

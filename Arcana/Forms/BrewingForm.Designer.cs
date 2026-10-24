@@ -95,7 +95,7 @@
             panel1.Controls.Add(cmbRecipes);
             panel1.Location = new Point(35, 129);
             panel1.Name = "panel1";
-            panel1.Size = new Size(969, 864);
+            panel1.Size = new Size(874, 864);
             panel1.TabIndex = 5;
             // 
             // btnBrew
@@ -109,8 +109,9 @@
             btnBrew.ForeColor = Color.White;
             btnBrew.Location = new Point(33, 777);
             btnBrew.Name = "btnBrew";
-            btnBrew.Size = new Size(826, 63);
+            btnBrew.Size = new Size(794, 63);
             btnBrew.TabIndex = 27;
+            btnBrew.Tag = "Primary";
             btnBrew.Text = "Start Brewing";
             btnBrew.UseVisualStyleBackColor = false;
             btnBrew.Click += btnBrew_Click;
@@ -128,10 +129,11 @@
             // 
             // lblProgress
             // 
+            lblProgress.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblProgress.AutoSize = true;
             lblProgress.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProgress.ForeColor = Color.FromArgb(196, 167, 255);
-            lblProgress.Location = new Point(816, 613);
+            lblProgress.Location = new Point(787, 613);
             lblProgress.Name = "lblProgress";
             lblProgress.Size = new Size(43, 30);
             lblProgress.TabIndex = 25;
@@ -143,7 +145,7 @@
             progressBarBrew.BackColor = Color.FromArgb(25, 24, 39);
             progressBarBrew.Location = new Point(33, 656);
             progressBarBrew.Name = "progressBarBrew";
-            progressBarBrew.Size = new Size(826, 38);
+            progressBarBrew.Size = new Size(794, 38);
             progressBarBrew.TabIndex = 24;
             // 
             // label7
@@ -162,7 +164,7 @@
             label6.BorderStyle = BorderStyle.FixedSingle;
             label6.Location = new Point(25, 588);
             label6.Name = "label6";
-            label6.Size = new Size(900, 2);
+            label6.Size = new Size(805, 2);
             label6.TabIndex = 22;
             // 
             // lstRequirements
@@ -175,7 +177,7 @@
             lstRequirements.ItemHeight = 28;
             lstRequirements.Location = new Point(22, 379);
             lstRequirements.Name = "lstRequirements";
-            lstRequirements.Size = new Size(900, 170);
+            lstRequirements.Size = new Size(805, 170);
             lstRequirements.TabIndex = 21;
             // 
             // label4
@@ -194,7 +196,7 @@
             divider.BorderStyle = BorderStyle.FixedSingle;
             divider.Location = new Point(22, 296);
             divider.Name = "divider";
-            divider.Size = new Size(900, 2);
+            divider.Size = new Size(805, 2);
             divider.TabIndex = 19;
             // 
             // lblDuration
@@ -269,7 +271,7 @@
             cmbRecipes.FormattingEnabled = true;
             cmbRecipes.Location = new Point(22, 56);
             cmbRecipes.Name = "cmbRecipes";
-            cmbRecipes.Size = new Size(903, 36);
+            cmbRecipes.Size = new Size(805, 36);
             cmbRecipes.TabIndex = 0;
             cmbRecipes.SelectedIndexChanged += cmbRecipes_SelectedIndexChanged;
             // 
@@ -283,7 +285,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(1045, 1027);
+            ClientSize = new Size(950, 1027);
             Controls.Add(panel1);
             Controls.Add(lblSubtitle);
             Controls.Add(lblTitle);

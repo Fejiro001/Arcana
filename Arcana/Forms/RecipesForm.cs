@@ -1,5 +1,6 @@
 ﻿using Arcana.Models;
 using Arcana.Repositories;
+using Arcana.UI;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
@@ -22,6 +23,8 @@ namespace Arcana.Forms
             dgvRecipeIngredients.AutoGenerateColumns = false;
 
             dgvRecipeIngredients.DataSource = _ingredients;
+
+            ArcanaTheme.Apply(this);
         }
 
         private void RecipesForm_Load(object sender, EventArgs e)

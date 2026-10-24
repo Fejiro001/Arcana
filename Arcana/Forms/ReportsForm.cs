@@ -1,4 +1,5 @@
 ﻿using Arcana.Repositories;
+using Arcana.UI;
 
 namespace Arcana.Forms
 {
@@ -8,6 +9,7 @@ namespace Arcana.Forms
         public ReportsForm()
         {
             InitializeComponent();
+            ArcanaTheme.Apply(this);
         }
 
         private void ReportsForm_Load(object sender, EventArgs e)

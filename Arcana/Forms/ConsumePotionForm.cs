@@ -1,4 +1,5 @@
 ﻿using Arcana.Models;
+using Arcana.UI;
 
 namespace Arcana.Forms
 {
@@ -7,6 +8,7 @@ namespace Arcana.Forms
         public ConsumePotionForm()
         {
             InitializeComponent();
+            ArcanaTheme.Apply(this);
         }
 
         public ConsumePotionForm(BrewedPotion potion) : this()

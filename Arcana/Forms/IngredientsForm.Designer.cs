@@ -262,6 +262,7 @@
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(115, 40);
             btnClear.TabIndex = 8;
+            btnClear.Tag = "Neutral";
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
@@ -278,6 +279,7 @@
             btnRetire.Name = "btnRetire";
             btnRetire.Size = new Size(115, 40);
             btnRetire.TabIndex = 7;
+            btnRetire.Tag = "Danger";
             btnRetire.Text = "Retire";
             btnRetire.UseVisualStyleBackColor = false;
             btnRetire.Click += btnRetire_Click;
@@ -294,6 +296,7 @@
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(115, 40);
             btnUpdate.TabIndex = 6;
+            btnUpdate.Tag = "Secondary";
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
@@ -310,6 +313,7 @@
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(160, 40);
             btnAdd.TabIndex = 5;
+            btnAdd.Tag = "Primary";
             btnAdd.Text = "Add Ingredient";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;

@@ -152,6 +152,7 @@
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(161, 56);
             btnDelete.TabIndex = 25;
+            btnDelete.Tag = "Danger";
             btnDelete.Text = "Delete Potion";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -169,6 +170,7 @@
             btnConsume.Name = "btnConsume";
             btnConsume.Size = new Size(190, 56);
             btnConsume.TabIndex = 24;
+            btnConsume.Tag = "Primary";
             btnConsume.Text = "Consume Potion";
             btnConsume.UseVisualStyleBackColor = false;
             btnConsume.Click += btnConsume_Click;

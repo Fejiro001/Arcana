@@ -100,6 +100,7 @@
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(112, 34);
             btnGenerate.TabIndex = 9;
+            btnGenerate.Tag = "Primary";
             btnGenerate.Text = "Generate";
             btnGenerate.UseVisualStyleBackColor = true;
             btnGenerate.Click += btnGenerate_Click;
@@ -191,6 +192,7 @@
             // dgvPopularPotions
             // 
             dgvPopularPotions.AllowUserToAddRows = false;
+            dgvPopularPotions.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvPopularPotions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPopularPotions.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvPopularPotions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -200,7 +202,7 @@
             dgvPopularPotions.ReadOnly = true;
             dgvPopularPotions.RowHeadersVisible = false;
             dgvPopularPotions.RowHeadersWidth = 62;
-            dgvPopularPotions.Size = new Size(766, 175);
+            dgvPopularPotions.Size = new Size(816, 175);
             dgvPopularPotions.TabIndex = 12;
             // 
             // colPotionName
@@ -222,6 +224,7 @@
             // dgvIngredientUsage
             // 
             dgvIngredientUsage.AllowUserToAddRows = false;
+            dgvIngredientUsage.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvIngredientUsage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvIngredientUsage.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvIngredientUsage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -231,7 +234,7 @@
             dgvIngredientUsage.ReadOnly = true;
             dgvIngredientUsage.RowHeadersVisible = false;
             dgvIngredientUsage.RowHeadersWidth = 62;
-            dgvIngredientUsage.Size = new Size(766, 180);
+            dgvIngredientUsage.Size = new Size(816, 180);
             dgvIngredientUsage.TabIndex = 13;
             // 
             // colIngredientName
@@ -284,7 +287,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(900, 850);
+            ClientSize = new Size(950, 850);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(dgvIngredientUsage);

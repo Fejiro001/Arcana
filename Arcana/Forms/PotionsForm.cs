@@ -1,5 +1,6 @@
 ﻿using Arcana.Models;
 using Arcana.Repositories;
+using Arcana.UI;
 using Microsoft.EntityFrameworkCore;
 
 namespace Arcana.Forms
@@ -16,6 +17,8 @@ namespace Arcana.Forms
             InitializeComponent();
 
             dgvPotions.AutoGenerateColumns = false;
+
+            ArcanaTheme.Apply(this);
         }
 
         private void PotionsForm_Load(object sender, EventArgs e)

@@ -79,6 +79,7 @@
             btnConfirmConsume.Name = "btnConfirmConsume";
             btnConfirmConsume.Size = new Size(112, 34);
             btnConfirmConsume.TabIndex = 3;
+            btnConfirmConsume.Tag = "Primary";
             btnConfirmConsume.Text = "Consume";
             btnConfirmConsume.UseVisualStyleBackColor = false;
             // 
@@ -94,6 +95,7 @@
             btnCancelConsume.Name = "btnCancelConsume";
             btnCancelConsume.Size = new Size(112, 34);
             btnCancelConsume.TabIndex = 4;
+            btnCancelConsume.Tag = "Danger";
             btnCancelConsume.Text = "Cancel";
             btnCancelConsume.UseVisualStyleBackColor = false;
             // 

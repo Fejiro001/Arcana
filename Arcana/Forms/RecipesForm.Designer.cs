@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblTitle = new Label();
             lblSubtitle = new Label();
             dgvRecipes = new DataGridView();
@@ -97,14 +97,14 @@
             dgvRecipes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRecipes.BackgroundColor = Color.FromArgb(41, 38, 60);
             dgvRecipes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(196, 167, 255);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvRecipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(196, 167, 255);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRecipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRecipes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRecipes.Columns.AddRange(new DataGridViewColumn[] { ID, colRecipeName, colEffect, colElement, colDuration, colRecipeStatus });
             dgvRecipes.Location = new Point(13, 178);
@@ -112,7 +112,7 @@
             dgvRecipes.ReadOnly = true;
             dgvRecipes.RowHeadersWidth = 62;
             dgvRecipes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRecipes.Size = new Size(898, 252);
+            dgvRecipes.Size = new Size(895, 252);
             dgvRecipes.TabIndex = 3;
             dgvRecipes.CellFormatting += dgvRecipes_CellFormatting;
             dgvRecipes.SelectionChanged += dgvRecipes_SelectionChanged;
@@ -203,7 +203,7 @@
             panel1.Controls.Add(label2);
             panel1.Location = new Point(13, 458);
             panel1.Name = "panel1";
-            panel1.Size = new Size(898, 872);
+            panel1.Size = new Size(895, 872);
             panel1.TabIndex = 5;
             // 
             // btnClearRecipe
@@ -217,6 +217,7 @@
             btnClearRecipe.Name = "btnClearRecipe";
             btnClearRecipe.Size = new Size(126, 45);
             btnClearRecipe.TabIndex = 28;
+            btnClearRecipe.Tag = "Neutral";
             btnClearRecipe.Text = "Clear";
             btnClearRecipe.UseVisualStyleBackColor = false;
             btnClearRecipe.Click += btnClearRecipe_Click;
@@ -233,6 +234,7 @@
             btnRetireRecipe.Name = "btnRetireRecipe";
             btnRetireRecipe.Size = new Size(126, 45);
             btnRetireRecipe.TabIndex = 27;
+            btnRetireRecipe.Tag = "Danger";
             btnRetireRecipe.Text = "Retire";
             btnRetireRecipe.UseVisualStyleBackColor = false;
             btnRetireRecipe.Click += btnRetireRecipe_Click;
@@ -249,6 +251,7 @@
             btnUpdateRecipe.Name = "btnUpdateRecipe";
             btnUpdateRecipe.Size = new Size(126, 45);
             btnUpdateRecipe.TabIndex = 26;
+            btnUpdateRecipe.Tag = "Secondary";
             btnUpdateRecipe.Text = "Update";
             btnUpdateRecipe.UseVisualStyleBackColor = false;
             btnUpdateRecipe.Click += btnUpdateRecipe_Click;
@@ -265,6 +268,7 @@
             btnAddRecipe.Name = "btnAddRecipe";
             btnAddRecipe.Size = new Size(126, 45);
             btnAddRecipe.TabIndex = 25;
+            btnAddRecipe.Tag = "Primary";
             btnAddRecipe.Text = "Create";
             btnAddRecipe.UseVisualStyleBackColor = false;
             btnAddRecipe.Click += btnAddRecipe_Click;
@@ -277,10 +281,11 @@
             btnRemoveIngredientFromRecipe.FlatStyle = FlatStyle.Flat;
             btnRemoveIngredientFromRecipe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnRemoveIngredientFromRecipe.ForeColor = Color.White;
-            btnRemoveIngredientFromRecipe.Location = new Point(385, 704);
+            btnRemoveIngredientFromRecipe.Location = new Point(639, 712);
             btnRemoveIngredientFromRecipe.Name = "btnRemoveIngredientFromRecipe";
             btnRemoveIngredientFromRecipe.Size = new Size(216, 45);
             btnRemoveIngredientFromRecipe.TabIndex = 24;
+            btnRemoveIngredientFromRecipe.Tag = "Primary";
             btnRemoveIngredientFromRecipe.Text = "Remove Ingredient";
             btnRemoveIngredientFromRecipe.UseVisualStyleBackColor = false;
             btnRemoveIngredientFromRecipe.Click += btnRemoveIngredientFromRecipe_Click;
@@ -297,7 +302,7 @@
             dgvRecipeIngredients.ReadOnly = true;
             dgvRecipeIngredients.RowHeadersWidth = 62;
             dgvRecipeIngredients.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRecipeIngredients.Size = new Size(573, 281);
+            dgvRecipeIngredients.Size = new Size(827, 281);
             dgvRecipeIngredients.TabIndex = 23;
             // 
             // colIngredientName
@@ -336,6 +341,7 @@
             btnAddIngredientToRecipe.Name = "btnAddIngredientToRecipe";
             btnAddIngredientToRecipe.Size = new Size(126, 45);
             btnAddIngredientToRecipe.TabIndex = 22;
+            btnAddIngredientToRecipe.Tag = "Primary";
             btnAddIngredientToRecipe.Text = "+ Add";
             btnAddIngredientToRecipe.UseVisualStyleBackColor = false;
             btnAddIngredientToRecipe.Click += btnAddIngredientToRecipe_Click;
@@ -380,7 +386,7 @@
             divider.BorderStyle = BorderStyle.FixedSingle;
             divider.Location = new Point(11, 263);
             divider.Name = "divider";
-            divider.Size = new Size(734, 2);
+            divider.Size = new Size(731, 2);
             divider.TabIndex = 18;
             // 
             // lblDuration
@@ -481,7 +487,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(25, 24, 39);
-            ClientSize = new Size(1045, 1344);
+            ClientSize = new Size(950, 1344);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(dgvRecipes);
