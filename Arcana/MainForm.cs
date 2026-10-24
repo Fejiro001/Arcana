@@ -114,5 +114,10 @@ namespace Arcana
         {
             OpenPage(new PotionsForm());
         }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            OpenPage(new ReportsForm());
+        }
     }
 }
