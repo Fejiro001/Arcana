@@ -130,6 +130,7 @@
             btnPotions.Text = "My Potions";
             btnPotions.TextAlign = ContentAlignment.MiddleLeft;
             btnPotions.UseVisualStyleBackColor = false;
+            btnPotions.Click += btnPotions_Click;
             // 
             // btnBrewing
             // 
@@ -409,7 +410,7 @@
             // 
             lblPageSubtitle.AutoSize = true;
             lblPageSubtitle.ForeColor = Color.FromArgb(185, 179, 206);
-            lblPageSubtitle.Location = new Point(32, 75);
+            lblPageSubtitle.Location = new Point(32, 80);
             lblPageSubtitle.Name = "lblPageSubtitle";
             lblPageSubtitle.Size = new Size(299, 32);
             lblPageSubtitle.TabIndex = 1;

@@ -109,5 +109,10 @@ namespace Arcana
                     "Please finish brewing before closing Arcana.");
             }
         }
+
+        private void btnPotions_Click(object sender, EventArgs e)
+        {
+            OpenPage(new PotionsForm());
+        }
     }
 }
